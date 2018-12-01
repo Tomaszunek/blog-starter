@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import './index.css';
+import './index.scss';
 
 const store = configureStore();
 const history = createBrowserHistory();

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import './App.css';
+import './App.scss';
 
 
 export namespace App {
