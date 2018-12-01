@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { IRootState, RootState } from './state';
 import { articleReducer } from './articleReducer';
+import { productReducer } from './productReducer';
 
 export { IRootState, RootState };
 
@@ -8,4 +9,5 @@ export { IRootState, RootState };
 // doesn't go well with redux@4
 export const rootReducer = combineReducers<IRootState>({
     articles: articleReducer as any,
+    products: productReducer as any,
 });

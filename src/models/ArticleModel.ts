@@ -1,11 +1,8 @@
-
-
-export interface IArticle {
+export interface IArticleModel {
     id: number,
     name: string,
     body: string
-}
-    
+}    
   
 export namespace ArticleFiltes {
     export enum Filter {

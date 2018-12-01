@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { IArticle } from '../models';
+import { IArticleModel } from '../models';
 
 export namespace ArticleActions {
   export enum Type {
@@ -9,10 +9,10 @@ export namespace ArticleActions {
     DELETE_ARCICLE = 'DELETE_COMMAND'    
   }
 
-  export const addCommand = createAction<PartialPick<IArticle, 'name'>>(Type.ADD_ARCICLE);
-  export const editCommand = createAction<PartialPick<IArticle, 'name'>>(Type.EDIT_ARCICLE);
-  export const setCommand = createAction<PartialPick<IArticle, "name">>(Type.SET_ARCICLE);
-  export const deleteCommand = createAction<IArticle['name']>(Type.DELETE_ARCICLE);  
+  export const addCommand = createAction<PartialPick<IArticleModel, 'name'>>(Type.ADD_ARCICLE);
+  export const editCommand = createAction<PartialPick<IArticleModel, 'name'>>(Type.EDIT_ARCICLE);
+  export const setCommand = createAction<PartialPick<IArticleModel, "name">>(Type.SET_ARCICLE);
+  export const deleteCommand = createAction<IArticleModel['name']>(Type.DELETE_ARCICLE);  
 }
 
 export type ArticleActions = Omit<typeof ArticleActions, 'Type'>;

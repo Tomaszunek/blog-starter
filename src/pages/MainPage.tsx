@@ -18,16 +18,17 @@ const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as
 export namespace MainPage {
   export interface IProps extends RouteComponentProps<void> {
     articles: RootState.ArticleState;
+    products: RootState.ProductState;
     actions: ArticleActions;
     filter: ArticleFiltes.Filter;
   }
 }
 
 @connect(
-  (state: IRootState, ownProps): Pick<MainPage.IProps, 'articles' | 'filter'> => {
+  (state: IRootState, ownProps): Pick<MainPage.IProps, 'articles' | 'products' | 'filter'> => {
     const hash = ownProps.location && ownProps.location.hash.replace('#', '');
     const filter = FILTER_VALUES.find((value) => value === hash) || ArticleFiltes.Filter.SHOW_ALL;
-    return { articles: state.articles, filter };
+    return { articles: state.articles, products: state.products, filter };
   },  
   (dispatch: Dispatch): Pick<MainPage.IProps, 'actions'> => ({
     actions: bindActionCreators(omit(ArticleActions, 'Type'), dispatch)
