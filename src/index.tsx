@@ -22,9 +22,11 @@ ReactDOM.render(
         <LoadingScreen/>
         <ErrorScreen/>
         <Navigation/>
-          <Switch>
-            <Application />
-          </Switch>
+          <div className="container">
+            <Switch>
+              <Application />
+            </Switch>
+          </div>          
         <Footer/>
       </div>
     </Router>   

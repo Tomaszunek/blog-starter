@@ -2,4 +2,14 @@
 
 .errorScreen {
     display: none;
+
+    @media only screen and (min-width: $sm) and (max-width: $lg) {
+        display: block;
+    }
+    @media only screen and (min-width: $xs) and (max-width: $sm) {
+        display: none;
+    }
+    @media only screen and (max-width: $xs) {
+        display: block;
+    }   
 }
