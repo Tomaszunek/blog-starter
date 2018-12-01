@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router';
-import  App  from '../App';
+import  MainPage  from '../pages/MainPage';
 
 export const Application = () => (
   <Switch>
-    <Route path="/" component={App} />
+    <Route path="/" component={MainPage} />
   </Switch>
 );

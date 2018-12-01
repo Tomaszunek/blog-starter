@@ -9,6 +9,8 @@ import { Router, Switch } from 'react-router';
 import Navigation from 'src/pages/Navigation';
 import Footer from 'src/pages/Footer';
 import './index.scss';
+import LoadingScreen from './pages/LoadingScreen';
+import ErrorScreen from './pages/ErrorScreen';
 
 const store = configureStore();
 const history = createBrowserHistory();
@@ -17,6 +19,8 @@ ReactDOM.render(
   <Provider store={store}>    
     <Router history={history}>
       <div>
+        <LoadingScreen/>
+        <ErrorScreen/>
         <Navigation/>
           <Switch>
             <Application />
