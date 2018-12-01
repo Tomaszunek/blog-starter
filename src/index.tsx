@@ -6,11 +6,11 @@ import { createBrowserHistory } from 'history';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { Router, Switch } from 'react-router';
-import Navigation from 'src/pages/Navigation';
-import Footer from 'src/pages/Footer';
+import Navigation from './components/Navigation/Navigation';
+import Footer from 'src/components/Footer/Footer';
 import './index.scss';
-import LoadingScreen from './pages/LoadingScreen';
-import ErrorScreen from './pages/ErrorScreen';
+import LoadingScreen from 'src/components/LoadingScreen/LoadingScreen';
+import ErrorScreen from 'src/components/ErrorScreen/ErrorScreen';
 
 const store = configureStore();
 const history = createBrowserHistory();

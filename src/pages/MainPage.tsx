@@ -7,6 +7,7 @@ import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
 import '../App.scss';
+import MainPageComp from 'src/components/MainPage/MainPageComp';
 
 const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as 
   (keyof typeof ArticleFiltes.Filter)[]).map(
@@ -36,9 +37,7 @@ export namespace MainPage {
 export default class MainPage extends React.Component<MainPage.IProps> {    
   public render() {
     return (
-      <div className="App">
-        abc
-      </div>
+      <MainPageComp/>
     );
   }
 }
