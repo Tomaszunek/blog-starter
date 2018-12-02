@@ -1,25 +1,22 @@
 import * as React from 'react';
-import './navigation.scss'
+import Links from './navLinks';
+
+import './navigation.scss';
+import BurgerMenu from './BurgerMenu';
 
 export default class Navigation extends React.Component {    
   public render() {
     return (
-      <nav className="naviagation">
-        <div>
+      <nav className="navigation">
+        <div className="logo">
           Prohuman
         </div>
-        <ul>
-          <li>Technology</li>
-          <li>Psychology</li>
-          <li>Motivation</li>
-          <li>Store</li>
-        </ul>
-        <div>
+        <Links/>
+        <div className="login">
           Login
         </div>
+        <BurgerMenu/>
       </nav>
     );
   }
 }
-
-
