@@ -5,7 +5,7 @@ import { configureStore } from './store';
 import { createBrowserHistory } from 'history';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import { Router, Switch } from 'react-router';
+import { Router } from 'react-router';
 import Navigation from './components/Navigation/Navigation';
 import Footer from 'src/components/Footer/Footer';
 import './index.scss';
@@ -23,9 +23,7 @@ ReactDOM.render(
         <ErrorScreen/>
         <Navigation/>
           <div className="container">
-            <Switch>
-              <Application />
-            </Switch>
+            <Application />
           </div>          
         <Footer/>
       </div>
