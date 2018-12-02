@@ -10,7 +10,7 @@ export default class Navigation extends React.Component {
     return (
       <nav className="navigation">
         <div className="logo">
-          <NavLink to="/">ProHuman Studio</NavLink>
+          <NavLink to="/">ProHuman</NavLink>
         </div>
         <Links/>
         <div className="login">

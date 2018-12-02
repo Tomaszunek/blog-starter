@@ -36,21 +36,23 @@ nav {
         list-style: none;
         
 
-        li {
-            padding: 5px 19px;
+        li {            
             border-right: 1px solid $second-color;
-            text-transform: uppercase;
-
             &:last-child {
                 border-right: 0px;                
             }
 
-            &:hover {
-                background-color: $second-color;
-                color: $main-color;
-                padding: 5px 14px;
-                margin: 0 5px;           
-            }
+            a {
+                padding: 5px 19px;                
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: $second-color;
+                    color: $main-color;
+                    padding: 5px 14px;
+                    margin: 0 5px;           
+                }        
+            }            
 
             &.login {
                 display: none;
@@ -94,7 +96,7 @@ nav {
         }
         .burgerLinksWraper {
             position: absolute;
-            left: -122px;
+            left: -123px;
             display: none;
             border: 1px solid $second-color;
             background-color: $primary-color;
@@ -103,19 +105,24 @@ nav {
                 padding: 0px 20px;
                 font-size: 20px;
 
-                li {
-                    padding: 2px 0px;
-                    margin: 2px 0px;
+                li {                    
                     border-right: 0px;
                     border-bottom: 1px solid $second-color;
-                    text-align: left;          
+                    text-align: left;
+                    
+                    a {
+                        padding: 2px 0px;
+                        margin: 2px 0px;                        
+                        
+                        &:hover {
+                            background-color: $second-color;
+                            color: $main-color;
+                            padding: 0;
+                            margin: 0;           
+                        }  
+                    }
         
-                    &:hover {
-                        background-color: $second-color;
-                        color: $main-color;
-                        padding: 0;
-                        margin: 0;           
-                    }  
+                    
                     &.login {
                         display: block;
                     }                 
