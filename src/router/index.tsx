@@ -12,6 +12,7 @@ export const Application = () => (
     <Route exact={true} path="/psychology" component={ArticlePage} />
     <Route exact={true} path="/motivation" component={ArticlePage} />
     <Route exact={true} path="/store" component={StorePage} />
+    <Route exact={true} path="/login" component={StorePage} />
     <Route component={ErrorPage}/>
   </Switch>
 );
