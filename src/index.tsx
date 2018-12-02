@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Application } from './router';
+import { RouteApp } from './router';
 import { configureStore } from './store';
 import { createBrowserHistory } from 'history';
 import registerServiceWorker from './registerServiceWorker';
@@ -23,7 +23,7 @@ ReactDOM.render(
         <ErrorScreen/>
         <Navigation/>
           <div className="container">
-            <Application />
+            <RouteApp />
           </div>          
         <Footer/>
       </div>
