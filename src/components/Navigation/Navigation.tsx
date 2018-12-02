@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink }  from 'react-router-dom';
 import Links from './navLinks';
 
 import './navigation.scss';
@@ -9,11 +10,11 @@ export default class Navigation extends React.Component {
     return (
       <nav className="navigation">
         <div className="logo">
-          Prohuman
+          <NavLink to="/">ProHuman Studio</NavLink>
         </div>
         <Links/>
         <div className="login">
-          Login
+          <NavLink to="/login">login</NavLink>
         </div>
         <BurgerMenu/>
       </nav>

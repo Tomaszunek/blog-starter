@@ -11,8 +11,24 @@ nav {
     font-size: 18px;
     color: $second-color;
 
+    a {
+        text-decoration: none;
+        color: $second-color;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
     .logo {
         font-size: 20px;
+        a {
+            &:hover {
+                color: $second-color;
+            }            
+        }
+        
+        
     }
 
     ul {        
@@ -44,6 +60,12 @@ nav {
 
     .login {
         text-transform: uppercase;
+
+        a {
+            &:hover {
+                color: $second-color;
+            }
+        }
     }
 
     .burgerMenu {
