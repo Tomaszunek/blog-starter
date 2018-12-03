@@ -1,0 +1,45 @@
+@import 'src/styles/variables.scss';
+
+.articleConteiner {
+  padding: 0px 100px;
+  background-color: $body-background;
+  
+  .grid-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    img {
+      width: 491px;
+      height: 355px;
+    }
+  }
+  .grid-four{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    img {
+      width: 359px;
+      height: 211px;
+    }
+  }
+  .grid-five {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    img {
+      width: 287px;
+      height: 200px;
+    }
+  }
+
+
+  @media only screen and (min-width: $sm) and (max-width: $lg) {
+    padding: 0px 80px;
+  }
+  @media only screen and (min-width: $xs) and (max-width: $sm) {
+    padding: 0px 60px;
+  }
+  @media only screen and (max-width: $xs) {
+    padding: 0px 40px;
+  }   
+}
