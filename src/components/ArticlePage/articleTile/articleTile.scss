@@ -1,6 +1,15 @@
 .articleTile {
+    position: relative;
     img {
         width: 100px;
         height: 100px;
+    }
+
+    .tileCont {
+        position: absolute;
+        bottom: 0px;
+        background-color: #653a3a44;
+        color: white;
+        padding: 32% 46%;
     }
 }
