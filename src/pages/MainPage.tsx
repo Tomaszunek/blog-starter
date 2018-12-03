@@ -35,10 +35,11 @@ export namespace MainPage {
   })
 )
 
-export default class MainPage extends React.Component<MainPage.IProps> {    
+export default class MainPage extends React.Component<MainPage.IProps> {     
   public render() {
+    const { articles } = this.props; 
     return (
-      <MainPageComp/>
+      <MainPageComp articles={articles}/>
     );
   }
 }
