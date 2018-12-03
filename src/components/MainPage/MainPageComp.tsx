@@ -10,6 +10,7 @@ export default class MainPageComp extends React.Component {
       <main>
         <FullScreenCont>          
           <img src={image} alt=""/>
+          <img src="./images/logos/greenBlack.png" alt=""/>
         </FullScreenCont>
         Next things <br/>
         Next things <br/>

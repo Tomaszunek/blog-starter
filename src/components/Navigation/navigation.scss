@@ -22,9 +22,20 @@ nav {
         color: $font-c;
         padding-top: 0;
         padding-bottom: 0;        
+        
 
         a {
             color: $font-c;
+
+            &.logo {
+                font-size: 20px;
+                display: flex;
+                background: url($logo-black); 
+                background-repeat: no-repeat;
+                background-size: 27%;
+                background-position: -1px 5px;
+                padding: 18px 49px;
+            }
     
             &:hover {
                 color: $font-white;
@@ -49,20 +60,22 @@ nav {
         text-decoration: none;
         color: $font-white;
 
+        &.logo {
+            font-size: 20px;
+            display: flex;
+            background: url($logo-white); 
+            background-repeat: no-repeat;
+            background-size: 27%;
+            background-position: -1px 5px;
+            padding: 18px 49px;
+        }
+
         &:hover {
             color: $font-white;
         }
     }
 
-    .logo {
-        font-size: 20px;
-        a {
-            &:hover {
-                color: $font-white;
-            }            
-        }       
-        
-    }
+    
 
     ul {        
         display: flex;
