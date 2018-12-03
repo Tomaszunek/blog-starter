@@ -7,7 +7,7 @@ export default class SliderPhoto extends React.Component<any, ISliderPhotoState>
     super(props)
     this.state = {
       photoIndex: 0,
-      images: ['obraz1.jpg', 'obraz2.jpg', 'obraz3.jpg', 'obraz4.jpg', 'obraz5.jpg', 'obraz6.jpg']
+      images: ['obraz10.jpg', 'obraz12.jpg', 'obraz13.jpg', 'obraz14.jpg', 'obraz15.jpg', 'obraz16.jpg']
     }
   }
 
