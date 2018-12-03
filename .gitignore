@@ -3,6 +3,11 @@
 # dependencies
 /node_modules
 
+
+#placeholders
+/public/images/placeholders
+
+
 # testing
 /coverage
 

@@ -26,15 +26,17 @@ export default class Navigation extends React.Component<IProps, IState> {
 
   public handleScroll = () => { 
       this.setState({ 
-        navBar: (window.pageYOffset > 80 ? 'navigation white_background' : ''), 
+        navBar: (window.pageYOffset > 100 ? 'navigation scrolled' : ''), 
       });
   }
   public render() {
     return (
       <nav className={this.state.navBar}>
-        <div className="logo">
-          <NavLink to="/">prohuman</NavLink>
-        </div>
+        <NavLink to="/" className='logo'>
+          <span>
+            prohuman
+          </span>
+        </NavLink>
         <Links/>
         <div className="login">
           <NavLink to="/login">login</NavLink>

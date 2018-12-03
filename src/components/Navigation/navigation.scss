@@ -7,16 +7,35 @@ nav {
     justify-content: space-between;
     padding-left: 8%;
     padding-right: 8%;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid $font-c;
     font-size: 18px;
     color: $font-white;
+    position: fixed;
+    width: 84%;
+    top: 0px;
+    left: 0px;
 
     &.scrolled {
         background-color: $background;
         color: $font-c;
+        padding-top: 0;
+        padding-bottom: 0;        
+        
 
         a {
             color: $font-c;
+
+            &.logo {
+                font-size: 20px;
+                display: flex;
+                background: url($logo-black); 
+                background-repeat: no-repeat;
+                background-size: 27%;
+                background-position: -1px 5px;
+                padding: 18px 49px;
+            }
     
             &:hover {
                 color: $font-white;
@@ -26,6 +45,13 @@ nav {
         ul {
             li {
                 border-right: 1px solid $font-c;
+                
+                a {
+                    &:hover {
+                        padding: 19px 14px;
+                    }
+                }
+                
             }
         }
     }
@@ -34,20 +60,22 @@ nav {
         text-decoration: none;
         color: $font-white;
 
+        &.logo {
+            font-size: 20px;
+            display: flex;
+            background: url($logo-white); 
+            background-repeat: no-repeat;
+            background-size: 27%;
+            background-position: -1px 5px;
+            padding: 18px 49px;
+        }
+
         &:hover {
             color: $font-white;
         }
     }
 
-    .logo {
-        font-size: 20px;
-        a {
-            &:hover {
-                color: $font-white;
-            }            
-        }       
-        
-    }
+    
 
     ul {        
         display: flex;
@@ -66,7 +94,7 @@ nav {
                 &:hover {
                     background-color: $theme-c;
                     color: $font-white;
-                    padding: 18px 14px;
+                    padding: 24px 14px;
                     margin: 0 5px;           
                 }        
             }            
@@ -142,14 +170,10 @@ nav {
         }        
     }   
 
-    @media only screen and (min-width: $sm) and (max-width: $lg) {
-        padding-left: 6%;
-        padding-right: 6%;
+    @media only screen and (min-width: $sm) and (max-width: $lg) {        
         font-size: 16px;       
     }
-    @media only screen and (min-width: $xs) and (max-width: $sm) {
-        padding-left: 4%;
-        padding-right: 4%;
+    @media only screen and (min-width: $xs) and (max-width: $sm) {        
         font-size: 14px;
 
         .logo {
@@ -170,9 +194,7 @@ nav {
 
         
     }
-    @media only screen and (max-width: $xs) {
-        padding-left: 2%;
-        padding-right: 2%;
+    @media only screen and (max-width: $xs) {        
         font-size: 12px;
 
         .logo {

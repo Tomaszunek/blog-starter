@@ -1,7 +1,8 @@
 export interface IArticleModel {
     id: number,
     name: string,
-    body: string
+    body: string,
+    image: string
 }    
   
 export namespace ArticleFiltes {

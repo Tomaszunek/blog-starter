@@ -35,8 +35,9 @@ export namespace ArticlePage {
 
 export default class ArticlePage extends React.Component<ArticlePage.IProps> {    
   public render() {
+    const { articles } = this.props;
     return (
-      <ArticlePageComp/>
+      <ArticlePageComp articles={articles}/>
     );
   }
 }
