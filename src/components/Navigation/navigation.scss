@@ -170,14 +170,10 @@ nav {
         }        
     }   
 
-    @media only screen and (min-width: $sm) and (max-width: $lg) {
-        padding-left: 6%;
-        padding-right: 6%;
+    @media only screen and (min-width: $sm) and (max-width: $lg) {        
         font-size: 16px;       
     }
-    @media only screen and (min-width: $xs) and (max-width: $sm) {
-        padding-left: 4%;
-        padding-right: 4%;
+    @media only screen and (min-width: $xs) and (max-width: $sm) {        
         font-size: 14px;
 
         .logo {
@@ -198,9 +194,7 @@ nav {
 
         
     }
-    @media only screen and (max-width: $xs) {
-        padding-left: 2%;
-        padding-right: 2%;
+    @media only screen and (max-width: $xs) {        
         font-size: 12px;
 
         .logo {
