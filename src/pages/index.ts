@@ -1,0 +1,7 @@
+export { default as StorePage } from './StorePage'
+export { default as AbilityPage } from './AbilityPage'
+export { default as ArticlePage } from './ArticlePage'
+export { default as ErrorPage } from './Error404'
+export { default as MainPage } from './MainPage'
+export { default as ProjectPage } from './ProjectPage'
+export { default as AboutAuthorPage } from './AboutAuthorPage'

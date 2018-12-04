@@ -67,67 +67,67 @@ const initialState: RootState.ArticleState = [
     body: "abc",
     id: 10,
     name: "woda",
-    image: "./images/placeholders/obraz4.jpg"
+    image: "./images/placeholders/obraz20.jpg"
   },
   {
     body: "abc",
     id: 11,
     name: "woda",
-    image: "./images/placeholders/obraz5.jpg"
+    image: "./images/placeholders/obraz10.jpg"
   },
   {
     body: "abc",
     id: 12,
     name: "woda",
-    image: "./images/placeholders/obraz6.jpg"
+    image: "./images/placeholders/obraz11.png"
   },
   {
     body: "abc",
     id: 13,
     name: "woda",
-    image: "./images/placeholders/obraz2.jpg"
+    image: "./images/placeholders/obraz12.jpg"
   },
   {
     body: "abc",
     id: 14,
     name: "woda",
-    image: "./images/placeholders/obraz3.jpg"
+    image: "./images/placeholders/obraz13.jpg"
   },
   {
     body: "abc",
     id: 15,
     name: "woda",
-    image: "./images/placeholders/obraz4.jpg"
+    image: "./images/placeholders/obraz14.jpg"
   },
   {
     body: "abc",
     id: 16,
     name: "woda",
-    image: "./images/placeholders/obraz5.jpg"
+    image: "./images/placeholders/obraz15.jpg"
   },
   {
     body: "abc",
     id: 17,
     name: "woda",
-    image: "./images/placeholders/obraz6.jpg"
+    image: "./images/placeholders/obraz16.jpg"
   },
   {
     body: "abc",
     id: 18,
     name: "woda",
-    image: "./images/placeholders/obraz4.jpg"
+    image: "./images/placeholders/obraz17.jpg"
   },
   {
     body: "abc",
     id: 19,
     name: "woda",
-    image: "./images/placeholders/obraz5.jpg"
+    image: "./images/placeholders/obraz18.jpg"
   },
   {
     body: "abc",
     id: 20,
     name: "woda",
-    image: "./images/placeholders/obraz6.jpg"
+    image: "./images/placeholders/obraz19.jpg"
   },
 ];
 
