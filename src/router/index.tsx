@@ -5,11 +5,10 @@ import { MainPage, ArticlePage, ProjectPage, AbilityPage, StorePage, ErrorPage, 
 export const RouteApp = () => (
   <Switch>
     <Route exact={true} path="/" component={MainPage} />
-    <Route path="/technology" component={ArticlePage} />
+    <Route path="/technology" component={ArticlePage} />    
     <Route path="/psychology" component={ArticlePage} />
-    <Route path="/motivation" component={ArticlePage} />
-    <Route path="/technology" component={ArticlePage} />
-    <Route path="/psychology" component={ArticlePage} />
+    <Route path="/motivation" component={ArticlePage} /> 
+    <Route path="/news" component={ProjectPage} />   
     <Route path="/projects" component={ProjectPage} />
     <Route path="/abilities" component={AbilityPage} />
     <Route path="/store" component={StorePage} />
