@@ -16,6 +16,7 @@ export default class ArticleTile extends React.Component<IArticleTileProps, any>
       <div className="articleTile" data-attr={id}>        
         <img src={image} alt=""/>
         <div className="tileCont">
+          <div className="categories">a</div>
           <span>{name}</span>          
         </div>
       </div>

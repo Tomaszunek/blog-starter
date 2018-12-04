@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .articleTile {
     position: relative;
     img {
@@ -8,11 +10,26 @@
     .tileCont {
         position: absolute;
         bottom: 0px;
-        background-color: #653a3a44;
+        background-color: #d6d6d60d;
         color: white;
         max-width: 100%;
         max-height: 100%;
         min-width: 100%;
         min-height: 100%;
+
+        .categories {
+            background: #00000094;
+            margin-left: 73%;
+            margin-top: 10px;
+            margin-bottom: 43%;
+            border-radius: 20px 0px 0px 20px;
+            padding: 10px 0px 10px 15px;
+        }
+
+        span {
+            background: #00000094;
+            border-radius: 0px 20px 20px 0px;
+            padding: 15px 0px 15px 307px;
+        }
     }
 }
