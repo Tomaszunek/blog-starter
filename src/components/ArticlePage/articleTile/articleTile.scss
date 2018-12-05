@@ -1,11 +1,7 @@
 @import 'src/styles/variables.scss';
 
 .articleTile {
-    position: relative;
-    img {
-        width: 100px;
-        height: 100px;
-    }
+    position: relative;    
 
     .tileCont {
         position: absolute;
@@ -29,7 +25,59 @@
         span {
             background: #00000094;
             border-radius: 0px 20px 20px 0px;
-            padding: 15px 0px 15px 307px;
+            // padding: 15px 0px 15px 90px;
         }
+    }
+}
+
+.grid {
+    &.grid-three {
+        .tileCont {
+            @media only screen and (min-width: $sm) and (max-width: $lg) {
+                .categories {
+                    margin-bottom: 42%;
+                }
+            }
+            @media only screen and (min-width: $xs) and (max-width: $sm) {
+                .categories {
+                    margin-bottom: 25%;
+                }
+            }
+            @media only screen and (max-width: $xs) {
+                .categories {
+                    margin-bottom: 27%;
+                } 
+                span {
+                    margin-left: 51px;
+                }            
+            } 
+        }
+    }
+
+    &.grid-four {
+        .tileCont {
+            @media only screen and (min-width: $sm) and (max-width: $lg) {
+                .categories {
+                    margin-bottom: 42%;
+                }
+            }
+            @media only screen and (min-width: $xs) and (max-width: $sm) {
+                .categories {
+                    margin-bottom: 25%;
+                }
+            }
+            @media only screen and (max-width: $xs) {
+                .categories {
+                    margin-bottom: 30%;
+                } 
+                span {
+                    margin-left: 51px;
+                }            
+            } 
+        }   
+    }
+
+    &.grid-five {
+        
     }
 }
