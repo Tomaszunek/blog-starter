@@ -12,7 +12,6 @@ export default class ArticleTile extends React.Component<IArticleTileProps, any>
   }
 
   public render() {
-    console.log(this.props.article)
     const item = (this.props.article ? this.props.article : this.props.product)
     if(item) {      
       const { id, image, name, AppContentCategories } = item;

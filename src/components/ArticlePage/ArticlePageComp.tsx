@@ -14,7 +14,7 @@ export default class ArticlePageComp extends React.Component<IArticlePageComp, a
           <img src="./images/logos/greenBlack.png" alt=""/>  
           <img src={image} alt=""/>          
         </FullScreenCont>
-        <ArticleContainer articles={this.props.articles} type="articles" structure={[3,4,5,4,4]}/>        
+        <ArticleContainer articles={this.props.articles} structure={[3,4,5,4,4]}/>        
       </main>
     );
   }
