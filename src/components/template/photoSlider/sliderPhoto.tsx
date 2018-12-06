@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './sliderPhoto.scss'
+import { IArticleModel } from 'src/models';
 
-export default class SliderPhoto extends React.Component<any, ISliderPhotoState> {
+export default class SliderPhoto extends React.Component<ISliderPhotoProps, ISliderPhotoState> {
   private interval: any;
   constructor(props: any) {
     super(props)
@@ -47,4 +48,8 @@ export default class SliderPhoto extends React.Component<any, ISliderPhotoState>
 interface ISliderPhotoState {
   photoIndex: number,
   images: Array<string>
+}
+
+interface ISliderPhotoProps {
+  slides?: Array<IArticleModel>
 }

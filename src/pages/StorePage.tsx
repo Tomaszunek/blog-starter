@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { ArticleActions } from '../actions';
+import { ProductActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
@@ -17,7 +17,7 @@ const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as
 export namespace StorePage {
   export interface IProps extends RouteComponentProps<void> {
     articles: RootState.ArticleState;
-    actions: ArticleActions;
+    actions: ProductActions;
     filter: ArticleFiltes.Filter;
   }
 }
@@ -29,16 +29,29 @@ export namespace StorePage {
     return { articles: state.articles, filter };
   },  
   (dispatch: Dispatch): Pick<StorePage.IProps, 'actions'> => ({
-    actions: bindActionCreators(omit(ArticleActions, 'Type'), dispatch)
+    actions: bindActionCreators(omit(ProductActions, 'Type'), dispatch)
   })
 )
 
-export default class StorePage extends React.Component<StorePage.IProps> {    
+export default class StorePage extends React.Component<StorePage.IProps> {
+  public componentDidMount() {
+    this.fetchProductContent();
+  }    
   public render() {
     return (
       <MainPageComp/>
     );
   }
+public fetchProductContent = () => {    
+  const { actions } = this.props;
+  // actions.fetchMPContentRequest({name: "abc"})
+  return fetch('http://localhost:3002/api/products')
+  .then(res => res.json())
+  .then(body => {
+    actions.fetchProductSuccess(body)
+  })
+  .catch(err => console.log(err))
+  } 
 }
 
 
