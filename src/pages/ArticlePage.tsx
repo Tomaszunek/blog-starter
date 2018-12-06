@@ -33,13 +33,28 @@ export namespace ArticlePage {
   })
 )
 
-export default class ArticlePage extends React.Component<ArticlePage.IProps> {    
+export default class ArticlePage extends React.Component<ArticlePage.IProps> {
+  public componentDidMount() {
+    this.fetchArticleContent();
+  }     
   public render() {
     const { articles } = this.props;
     return (
       <ArticlePageComp articles={articles}/>
     );
   }
+
+  public fetchArticleContent = () => {    
+    const { actions } = this.props;
+    // actions.fetchMPContentRequest({name: "abc"})
+    return fetch('http://localhost:3002/api/contents')
+    .then(res => res.json())
+    .then(body => {
+      actions.fetchArticleSucess(body)
+    })
+    .catch(err => console.log(err))
+  } 
 }
+
 
 

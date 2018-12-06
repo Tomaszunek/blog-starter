@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { IRootState, RootState } from './state';
 import { articleReducer } from './articleReducer';
 import { productReducer } from './productReducer';
+import { mainpageReducer } from './mainPageReducer';
 
 export { IRootState, RootState };
 
@@ -10,4 +11,5 @@ export { IRootState, RootState };
 export const rootReducer = combineReducers<IRootState>({
     articles: articleReducer as any,
     products: productReducer as any,
+    mainpageContent: mainpageReducer as any,
 });
