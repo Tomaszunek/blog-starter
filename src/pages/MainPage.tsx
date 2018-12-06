@@ -60,19 +60,37 @@ public fetchMainPageContent = () => {
 }
 
 function groupByType(mainpageContent:any) {
-const content = {
-  articles: new Array, products: new Array, slides: new Array
-};
-mainpageContent.forEach((item: any) => {
-  if(item.isSlider && item.AppArticle) {
-    content.slides.push(item)
-  } else if(item.AppProduct) {
-    content.products.push(item)
-  } else {
-    content.articles.push(item)
+  const content = {
+    articles: new Array, products: new Array, slides: new Array
+  };
+  mainpageContent.forEach((item: any) => {
+    console.log(item)
+    if(item.AppProduct) {
+      item.AppProduct.AppContentCategories = extractCategories(item.AppProduct.AppContentCategories);
+      // console.log(item)
+      content.products.push(item.AppProduct)    
+    } else {
+      item.AppContent.AppContentCategories = extractCategories(item.AppContent.AppContentCategories)
+      // console.log(item)
+      if(item.isSlider) {        
+        content.slides.push(item.AppContent)
+      } else {
+        content.articles.push(item.AppContent)
+        
+      }
+    }
+  });
+  console.log(content)
+  return {
+    ...content
   }
-});
-return {
-  ...content
 }
+
+function extractCategories(categories:any) {
+  if(categories) {
+    console.log(categories, categories.map((elm:any) => elm.AppCategory))
+    return categories.map((elm:any) => elm.AppCategory)
+  } else {
+    return [];
+  }  
 }

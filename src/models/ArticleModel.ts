@@ -1,8 +1,16 @@
+import { IContentCategory } from './ContentCategory';
+
 export interface IArticleModel {
     id: number,
     name: string,
+    slug: string,
+    type: string,
+    articleType: string,
     body: string,
-    image: string
+    image: string,
+    AppContentCategories?: Array<IContentCategory>,
+    createdAt: Date,
+    updatedAt: Date
 }    
   
 export namespace ArticleFiltes {

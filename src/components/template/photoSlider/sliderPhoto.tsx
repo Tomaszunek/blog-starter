@@ -1,27 +1,28 @@
 import * as React from 'react';
 import './sliderPhoto.scss'
 import { IArticleModel } from 'src/models';
+import ArticleTile from 'src/components/ArticlePage/articleTile/articleTile';
 
 export default class SliderPhoto extends React.Component<ISliderPhotoProps, ISliderPhotoState> {
   private interval: any;
   constructor(props: any) {
     super(props)
     this.state = {
-      photoIndex: 0,
-      images: ['obraz10.jpg', 'obraz12.jpg', 'obraz13.jpg', 'obraz14.jpg', 'obraz15.jpg', 'obraz16.jpg']
+      photoIndex: 0
     }
   }
 
 
   public render() {
-    const { images, photoIndex } = this.state;
+    const { photoIndex } = this.state;
+    const { slides } = this.props;
     return (
       <div className="sliderPhoto">
         {
-          images.filter((item, index) => photoIndex === index)
+          (slides ? (slides.filter((item, index) => photoIndex === index)
           .map((item, index) => 
-            <img key={index} src={"./images/placeholders/" + item} alt=""/> 
-          )
+            <ArticleTile key={index} article={item}/>
+          )) : null)
         }
       </div>
     );
@@ -38,16 +39,17 @@ export default class SliderPhoto extends React.Component<ISliderPhotoProps, ISli
 
   private changeSlide = () => {
     let { photoIndex } = this.state;
-    const { images } = this.state;
-    this.setState({
-      photoIndex: ((images.length === photoIndex + 1) ? 0 : ++photoIndex)
-    });
+    const { slides } = this.props;
+    if(slides) {
+      this.setState({
+        photoIndex: ((slides.length === photoIndex + 1) ? 0 : ++photoIndex)
+      });
+    }
 }
 }
 
 interface ISliderPhotoState {
-  photoIndex: number,
-  images: Array<string>
+  photoIndex: number
 }
 
 interface ISliderPhotoProps {
