@@ -29,7 +29,7 @@ export default class SliderPhoto extends React.Component<ISliderPhotoProps, ISli
   }
 
   public componentDidMount() {
-    this.interval = setInterval(() => this.changeSlide(), 3000);
+    this.interval = setInterval(() => this.changeSlide(), 5000);
   }
 
   public componentWillUnmount() {

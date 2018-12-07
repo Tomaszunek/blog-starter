@@ -38,9 +38,10 @@ export default class ArticlePage extends React.Component<ArticlePage.IProps> {
     this.fetchArticleContent();
   }     
   public render() {
+    console.log(this.props);
     const { articles } = this.props;
     return (
-      <ArticlePageComp articles={articles}/>
+      <ArticlePageComp articles={articles} match={this.props.match}/>
     );
   }
 

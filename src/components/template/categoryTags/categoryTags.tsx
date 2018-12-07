@@ -8,16 +8,17 @@ export default class CategoryTags extends React.Component<ICategoryTagProps, any
     }
 
     public render() {
-        const { categories } = this.props;
+        const { categories, articleType} = this.props;
         return (
-            <div>
+            <div className={ "categoryTagsCont " + (articleType ? articleType : "") }>
                 {categories ? categories.map(cat => {
-                   return(<div key={cat.id}>{cat.name}</div>)
+                   return(<p className={cat.name} key={cat.id}>{"a"}</p>)
                 }) : null}
             </div>
         )
     }      
 }
 interface ICategoryTagProps {
-    categories?: Array<IContentCategory>
+    categories?: Array<IContentCategory>,
+    articleType: string
 }

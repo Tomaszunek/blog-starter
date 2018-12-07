@@ -4,6 +4,7 @@ export interface IProductModel {
     id: number,
     name: string,
     slug: string,
+    type: string,
     productType: string,
     body: string,
     image: string,

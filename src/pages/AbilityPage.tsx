@@ -37,9 +37,9 @@ export namespace AbilityPage {
 
 export default class AbilityPage extends React.Component<AbilityPage.IProps> {     
   public render() {
-    const { articles } = this.props; 
+    const { articles } = this.props;
     return (
-      <MainPageComp articles={articles}/>
+      <MainPageComp articles={articles} />
     );
   }
 }

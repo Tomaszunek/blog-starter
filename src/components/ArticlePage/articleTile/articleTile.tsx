@@ -14,14 +14,21 @@ export default class ArticleTile extends React.Component<IArticleTileProps, any>
   public render() {
     const item = (this.props.article ? this.props.article : this.props.product)
     if(item) {      
-      const { id, image, name, AppContentCategories } = item;
+      const { id, image, name, AppContentCategories, slug, type } = item;
       return (
-        <div className="articleTile" data-attr={id}>        
-          <img src={'./images/placeholders/' + image} alt=""/>
-          <div className="tileCont">
-            <CategoryTags categories={AppContentCategories}/>          
-            <span>{name}</span>          
-          </div>
+        <div className="articleTile" data-attr={id}>
+          <a href={(this.props.product ? "product/" : "article/") + slug}>
+            <img src={'./images/placeholders/' + image} alt=""/>
+            <div className="tileCont">
+              <CategoryTags categories={AppContentCategories} articleType={type}/>          
+              <div>
+                <span>{name}</span>
+                {
+                  (this.props.product ? <p>16.99$</p> : null)
+                }              
+              </div>
+            </div>
+          </a>       
         </div>
       );
     } else {

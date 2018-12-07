@@ -17,7 +17,10 @@ const Links: React.SFC = () => {
             <NavLink to="/motivation">motivation</NavLink>
         </li>
         <li>
-            <NavLink to="/store">store</NavLink>
+            <NavLink to="/spiritual">spiritual</NavLink>
+        </li>
+        <li>
+            <NavLink to="/products">store</NavLink>
         </li>
 
         {/* <li className="login">

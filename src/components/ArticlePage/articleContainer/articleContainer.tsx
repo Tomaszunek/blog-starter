@@ -35,7 +35,6 @@ export default class ArticleContainer extends React.Component<IArticleContainerP
     } else if (articles) {
       sasArray = articles;
     }
-    console.log(sasArray)
     structure.forEach((item, index) => {
       newArray[index] = [];
       indexElemMax += item;
@@ -52,8 +51,8 @@ export default class ArticleContainer extends React.Component<IArticleContainerP
       const gridClassName = gridArr[item.length];
       return (<div key={index} className={"grid " + gridClassName}>     
         {
-          item.map((elem:any, ind: any) => ( 
-            <ArticleTile key={ind} article={elem} />
+          item.map((elem:any, ind: any) => (
+            (elem.articletType ? <ArticleTile key={ind} article={elem} /> : <ArticleTile key={ind} product={elem} />)
           ))
         }                 
       </div>)

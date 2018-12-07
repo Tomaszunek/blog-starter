@@ -1,0 +1,111 @@
+ul.breadcrumbs {
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    border-radius: 5px;
+    counter-reset: flag;
+
+    $breadcrumb-theme-1: rgba(30, 233, 57, 0.5);
+    $breadcrumb-theme-2: rgba(255, 255, 255, 0.13);  
+    $breadcrumb-theme-3: rgba(30, 233, 47, 0.5); 
+    $breadcrumb-theme-4: rgba(30, 233, 40, 0.5); 
+
+    li {
+        text-decoration: none;
+        outline: none;
+        display: block;
+        float: left;
+        font-size: 16px;
+        line-height: 36px;
+        padding: 0 10px 0 60px;
+        position: relative;
+        background: $breadcrumb-theme-2;
+        color: white;
+        transition: background .5s;
+        padding: 0 30px 0px 75px;        
+        
+        a {
+            color: white;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        &:first-child {
+            padding-left: 50px;
+            padding-right: 35px;
+            border-radius: 20px 0 0 20px;
+
+            &::before {
+                left: 14px;
+            }
+        }            
+
+        &:last-child {
+            padding-left: 70px;
+            border-radius: 0 20px 20px 0;
+
+            &::after {
+                content: none;
+            }
+        }
+
+        &::before {
+            content: counter(flag);
+            counter-increment: flag;
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin: 8px 0;
+            position: absolute;
+            top: 0;
+            left: 30px;
+            font-weight: bold;
+            background: $breadcrumb-theme-2;
+            box-shadow: 0 0 0 1px $breadcrumb-theme-1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -18px;
+            width: 36px;
+            height: 36px;
+            transform: scale(0.707) rotate(45deg);
+            z-index: 1;
+            border-radius: 0 5px 0 50px;
+            transition: background 0.5s;
+            box-shadow: 2px -2px 0 2px $breadcrumb-theme-4;
+        }
+
+        &.active {
+            color: $breadcrumb-theme-2;
+            background: $breadcrumb-theme-1;
+            &::before {
+                color: $breadcrumb-theme-1;
+            }
+    
+            &::after {
+                background: $breadcrumb-theme-1;
+            }
+        }
+
+
+        &:hover {
+            color: $breadcrumb-theme-2;
+            background: $breadcrumb-theme-3;
+            &::before {
+                color: $breadcrumb-theme-1;
+            }
+    
+                
+            &::after {
+                color: $breadcrumb-theme-1;
+                background: $breadcrumb-theme-3;
+            }
+        }
+
+
+    }
+}
