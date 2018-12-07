@@ -8,11 +8,9 @@ import { MainPage, ArticlePage, ProjectPage,
 export const RouteApp = () => (
   <Switch>
     <Route exact={true} path="/" component={MainPage} />
-    <Route path="/technology" component={ArticlePage} />    
-    <Route path="/psychology" component={ArticlePage} />
-    <Route path="/motivation" component={ArticlePage} />
-    <Route path="/article/:slug" component={ArticleSinglePage} /> 
-    <Route path="/news" component={ProjectPage} />   
+    <Route exact={true} path="/articles" component={ArticlePage} />
+    <Route path="/articles/:type/:slug" component={ArticleSinglePage} /> 
+    <Route path="/articles/:type" component={ArticlePage} />    
     <Route path="/projects" component={ProjectPage} />
     <Route path="/abilities" component={AbilityPage} />
     <Route path="/products" component={StorePage} />

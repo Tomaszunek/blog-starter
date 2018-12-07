@@ -17,7 +17,7 @@ export default class ProductSinglePage extends React.Component<IProps, any> {
         }
       }      
       breadArray[breadcrumbs[i]] = breadstring;
-    }
+    }   
     const keys = Object.keys(breadArray);
     const lastKey = keys[keys.length - 1];
     delete breadArray[lastKey];

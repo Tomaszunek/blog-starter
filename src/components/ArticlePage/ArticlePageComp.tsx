@@ -17,7 +17,7 @@ export default class ArticlePageComp extends React.Component<IArticlePageComp, a
           <img src={image} alt=""/>          
         </FullScreenCont>
         <BreadcrumbsTemplate match={this.props.match}/>
-        <ArticleContainer articles={articles} structure={[3,4,5,4,4]}/>        
+        <ArticleContainer articles={articles} structure={[4,4]}/>        
       </main>
     );
   }

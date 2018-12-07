@@ -10,9 +10,12 @@ export const articleReducer = handleActions<RootState.ArticleState, IArticleMode
   {
     [ArticleActions.Type.FETCH_ARTICLE_SUCCESS]: (state, action) => {
       if(action.payload) {
-        return state
-      }
-      return state 
+        return {
+          ...state,
+          ...action.payload
+        }
+      }      
+      return state
     }, 
   },
   initialState

@@ -17,7 +17,7 @@ export default class ArticleTile extends React.Component<IArticleTileProps, any>
       const { id, image, name, AppContentCategories, slug, type } = item;
       return (
         <div className="articleTile" data-attr={id}>
-          <a href={(this.props.product ? "product/" : "article/") + slug}>
+          <a href={`${this.props.product ? "products" : "articles"}/${type}/${slug}`}>           
             <img src={'./images/placeholders/' + image} alt=""/>
             <div className="tileCont">
               <CategoryTags categories={AppContentCategories} articleType={type}/>          
