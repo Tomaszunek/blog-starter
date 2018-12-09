@@ -30,6 +30,9 @@
 // $font-black: black;
 // $gray: gray;
 
+// $cat-products-bg: rgb(255, 165, 0);
+// $cat-products-bg-alpha: rgba(255, 165, 0, 0.5);
+
 //////////////////////////////////////////////////////
 
 $theme-c: #208bab;
@@ -47,18 +50,31 @@ $font-white: white;
 $font-black: black;
 $gray: gray;
 
+$cat-products-bg: rgb(128, 0, 128);
+$cat-products-bg-alpha: rgba(128, 0, 128, 0.5);
+
 //////////////////////////////////////////////////////
 
+$cat-tech-bg: rgb(128, 128, 128);
+$cat-tech-bg-alpha: rgba(128, 128, 128, 0.5);
 
-$cat-technology-bg-alpha: rgba(185, 37, 37, 0.5);
-$cat-psychology-bg-alpha: rgba(41, 180, 28, 0.5);
-$cat-motivation-bg-alpha: rgba(61, 59, 187, 0.5);
-$cat-spiritual-bg-alpha: rgba(196, 126, 46, 0.5);
-$cat-news-bg-alpha: rgba(185, 37, 37, 0.5);
+$cat-psych-bg: rgb(204, 81, 163);
+$cat-psych-bg-alpha: rgba(204, 81, 163, 0.5);
+
+$cat-motiv-bg: rgb(0, 128, 0);
+$cat-motiv-bg-alpha: rgba(0, 128, 0, 0.5);
+
+$cat-spirit-bg: rgb(52, 182, 187);
+$cat-spirit-bg-alpha: rgba(52, 182, 187, 0.5);
+
+$cat-news-bg: rgb(0, 0, 255);
+$cat-news-bg-alpha: rgba(0, 0, 255, 0.5);
+
+$cat-projects-bg-alpha: red;
 $cat-projects-bg-alpha: rgba(41, 180, 28, 0.5);
-$cat-abilities-bg-alpha: rgba(61, 59, 187, 0.5);
-$cat-about-bg-alpha: rgba(196, 126, 46, 0.5);
-$cat-products-bg-alpha: rgba(196, 126, 46, 0.5);
+
+$cat-ability-bg-alpha: yellow;
+$cat-ability-bg-alpha: rgba(61, 59, 187, 0.5);
 
 $cat-normal-bg-alpha: rgba(35,35,35,0.5);
 

@@ -10,16 +10,16 @@
     color: black;
     
     &.technology {
-        background: $cat-technology-bg-alpha; 
+        background: $cat-tech-bg-alpha; 
     }
     &.psychology {
-        background: $cat-psychology-bg-alpha;
+        background: $cat-psych-bg-alpha;
     }
     &.motivation {
-        background: $cat-motivation-bg-alpha;
+        background: $cat-motiv-bg-alpha;
     }
     &.spiritual {
-        background: $cat-spiritual-bg-alpha;
+        background: $cat-spirit-bg-alpha;
     }
     &.news {
         background: $cat-news-bg-alpha; 
@@ -28,11 +28,8 @@
         background: $cat-projects-bg-alpha;
     }
     &.abilities {
-        background: $cat-abilities-bg-alpha;
-    }
-    &.about {
-        background: $cat-about-bg-alpha;
-    }
+        background: $cat-ability-bg-alpha;
+    }    
     &.product {
         background: $cat-products-bg-alpha;
     }
@@ -41,22 +38,6 @@
         border: 2px solid black;
         border-radius: 70px;
         padding: 5px 10px;
-        margin: 0px 3px;
-
-        &.category1 {
-            background-color: green;
-        }
-    
-        &.category2 {
-            background-color: red;
-        }
-
-        &.category3 {
-            background-color: blue;
-        }
-    
-        &.category4 {
-            background-color: yellow;
-        }
+        margin: 0px 3px;        
     }
 }

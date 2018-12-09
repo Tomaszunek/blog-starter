@@ -36,20 +36,30 @@ export namespace ArticlePage {
 export default class ArticlePage extends React.Component<ArticlePage.IProps> {
   public componentDidMount() {
     this.fetchArticleContent();
-  }     
+  }
+  public shouldComponentUpdate(nextProps:ArticlePage.IProps, nextState:any) {
+    if(this.props.match.url !== nextProps.match.url) {
+      const splitUrl = nextProps.match.url.split('/');
+      this.fetchArticleContent(splitUrl[splitUrl.length - 1]);
+      return true;
+    }
+    return false;
+  }
   public render() {
     const { articles } = this.props;
+    const newMatch = this.props.match;
     return (
-      <ArticlePageComp articles={articles} match={this.props.match}/>
+      <ArticlePageComp articles={articles} match={newMatch}/>
     );
   }
 
-  public fetchArticleContent = () => {    
+  public fetchArticleContent = (urlType?: string) => {    
     const { actions, match } = this.props;
     let url = "http://localhost:3002/api/contents";
     const splitUrl = match.url.split('/');
+    const splitedUrl = (urlType ? urlType : splitUrl[splitUrl.length - 1])
     if( match.path !== "/articles" ) {
-      url =`${url}/${splitUrl[splitUrl.length - 1]}`;
+      url =`${url}/${splitedUrl}`;
     }    
     return fetch(url)
     .then(res => res.json())

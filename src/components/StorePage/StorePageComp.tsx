@@ -7,6 +7,7 @@ import image from 'src/logo.svg'
 import BreadcrumbsTemplate from '../template/breadcrumbs/breadcrumbs';
 import { match } from 'react-router';
 import ArticleContainer from '../ArticlePage/articleContainer/articleContainer';
+import SearchBar from '../template/searchBar/searchBar';
 
 export default class StorePageComp extends React.Component<IStorePageCompProps, any> {  
   public render() {
@@ -16,6 +17,7 @@ export default class StorePageComp extends React.Component<IStorePageCompProps, 
         <FullScreenCont>        
           <img src={image} alt=""/>          
         </FullScreenCont>
+        <SearchBar searchType="product"/> 
         <BreadcrumbsTemplate match={this.props.match}/>
         <ArticleContainer products={products} structure={[4,4]}/>        
       </main>

@@ -5,10 +5,7 @@ import CategoryTags from 'src/components/template/categoryTags/categoryTags';
 
 export default class ArticleTile extends React.Component<IArticleTileProps, any> {
   constructor(props: IArticleTileProps) {
-    super(props);
-
-    this.state = {
-    }
+    super(props);    
   }
 
   public render() {
@@ -20,7 +17,11 @@ export default class ArticleTile extends React.Component<IArticleTileProps, any>
           <a href={`${this.props.product ? "products" : "articles"}/${type}/${slug}`}>           
             <img src={'./images/placeholders/' + image} alt=""/>
             <div className="tileCont">
-              <CategoryTags categories={AppContentCategories} articleType={type}/>          
+            {
+              AppContentCategories && AppContentCategories.length ? 
+                <CategoryTags categories={AppContentCategories} articleType={type}/>  :
+                null        
+            }
               <div>
                 <span>{name}</span>
                 {
