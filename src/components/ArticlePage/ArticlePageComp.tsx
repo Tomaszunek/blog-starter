@@ -3,10 +3,9 @@ import './articlepage.scss'
 import FullScreenCont from '../template/fullScreenCont/fullSreenCont';
 import ArticleContainer from './articleContainer/articleContainer';
 import { IArticleModel } from 'src/models';
-
-import image from 'src/logo.svg'
 import BreadcrumbsTemplate from '../template/breadcrumbs/breadcrumbs';
 import { match } from 'react-router';
+import SearchBar from '../template/searchBar/searchBar';
 
 export default class ArticlePageComp extends React.Component<IArticlePageComp, any> {  
   public render() {
@@ -14,7 +13,8 @@ export default class ArticlePageComp extends React.Component<IArticlePageComp, a
     return (
       <main>
         <FullScreenCont>        
-          <img src={image} alt=""/>          
+          <img className="headerImage" src="../images/backgroundMainPages/news.jpg" alt=""/>
+          <SearchBar searchType="article"/>         
         </FullScreenCont>
         <BreadcrumbsTemplate match={this.props.match}/>
         <ArticleContainer articles={articles} structure={[4,4]}/>        

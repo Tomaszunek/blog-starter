@@ -5,6 +5,7 @@ ul.breadcrumbs {
     overflow: hidden;
     border-radius: 5px;
     counter-reset: flag;
+    padding: 0;
 
     $breadcrumb-theme-1: rgba(30, 233, 57, 0.5);
     $breadcrumb-theme-2: rgba(255, 255, 255, 0.13);  
