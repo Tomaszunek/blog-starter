@@ -6,7 +6,7 @@ import { ArticleActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
-import ArticlePageComp from 'src/components/ArticlePage/ArticlePageComp';
+import ArticlePageComp from '../components/ArticlePage/ArticlePageComp';
 
 const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as 
   (keyof typeof ArticleFiltes.Filter)[]).map(

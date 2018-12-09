@@ -2,7 +2,7 @@ import * as React from 'react';
 import './mainpage.scss'
 import FullScreenCont from '../template/fullScreenCont/fullSreenCont';
 import SliderPhoto from '../template/photoSlider/sliderPhoto';
-import ArticleContainer from 'src/components/ArticlePage/articleContainer/articleContainer';
+import ArticleContainer from '../ArticlePage/articleContainer/articleContainer';
 import { IArticleModel, IProductModel } from 'src/models';
 
 

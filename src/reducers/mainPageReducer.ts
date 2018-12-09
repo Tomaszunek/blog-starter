@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { MainPageContentActions } from 'src/actions/mainpage';
+import { MainPageContentActions } from '../actions';
 import { RootState } from './state';
 
 const initialState: RootState.MainPageContentState = {articles: [],products: [], slides:[]

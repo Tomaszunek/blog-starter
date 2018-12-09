@@ -3,7 +3,7 @@ import './storePage.scss'
 import FullScreenCont from '../template/fullScreenCont/fullSreenCont';
 import { IProductModel } from 'src/models';
 
-import image from 'src/logo.svg'
+import image from '../../logo.svg'
 import BreadcrumbsTemplate from '../template/breadcrumbs/breadcrumbs';
 import { match } from 'react-router';
 import ArticleContainer from '../ArticlePage/articleContainer/articleContainer';
