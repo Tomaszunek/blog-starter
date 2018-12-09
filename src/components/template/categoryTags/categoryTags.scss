@@ -1,0 +1,62 @@
+@import 'src/styles/variables.scss';
+
+.categoryTagsCont {
+    background: $cat-normal-bg-alpha; 
+    border-radius: 20px 0px 0px 20px;
+    padding: 10px 0px 10px 15px;
+    float: right;
+    display: flex;    
+    margin-top: 3%;
+    color: black;
+    
+    &.technology {
+        background: $cat-technology-bg-alpha; 
+    }
+    &.psychology {
+        background: $cat-psychology-bg-alpha;
+    }
+    &.motivation {
+        background: $cat-motivation-bg-alpha;
+    }
+    &.spiritual {
+        background: $cat-spiritual-bg-alpha;
+    }
+    &.news {
+        background: $cat-news-bg-alpha; 
+    }
+    &.projects {
+        background: $cat-projects-bg-alpha;
+    }
+    &.abilities {
+        background: $cat-abilities-bg-alpha;
+    }
+    &.about {
+        background: $cat-about-bg-alpha;
+    }
+    &.product {
+        background: $cat-products-bg-alpha;
+    }
+    
+    p {
+        border: 2px solid black;
+        border-radius: 70px;
+        padding: 5px 10px;
+        margin: 0px 3px;
+
+        &.category1 {
+            background-color: green;
+        }
+    
+        &.category2 {
+            background-color: red;
+        }
+
+        &.category3 {
+            background-color: blue;
+        }
+    
+        &.category4 {
+            background-color: yellow;
+        }
+    }
+}
