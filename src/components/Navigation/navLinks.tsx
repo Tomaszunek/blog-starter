@@ -8,23 +8,26 @@ const Links: React.SFC = () => {
             <NavLink to="/login">login</NavLink>
         </li>
         <li>
-            <NavLink to="/technology">technology</NavLink>
+            <NavLink to="/articles/technology">technology</NavLink>
         </li>
         <li>
-            <NavLink to="/psychology">psychology</NavLink>
+            <NavLink to="/articles/psychology">psychology</NavLink>
         </li>
         <li>
-            <NavLink to="/motivation">motivation</NavLink>
+            <NavLink to="/articles/motivation">motivation</NavLink>
         </li>
         <li>
-            <NavLink to="/store">store</NavLink>
+            <NavLink to="/articles/spiritual">spiritual</NavLink>
+        </li>
+        <li>
+            <NavLink to="/products">store</NavLink>
         </li>
 
         {/* <li className="login">
             <NavLink to="/login">login</NavLink>
         </li>
         <li>
-            <NavLink to="/news">news</NavLink>
+            <NavLink to="/articles/news">news</NavLink>
         </li>
         <li>
             <NavLink to="/projects">projects</NavLink>

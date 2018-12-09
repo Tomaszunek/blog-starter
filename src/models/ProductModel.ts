@@ -1,8 +1,16 @@
+import { IContentCategory } from './ContentCategory';
+
 export interface IProductModel {
     id: number,
     name: string,
+    slug: string,
+    type: string,
+    productType: string,
     body: string,
-    price: number
+    image: string,
+    AppContentCategories?: Array<IContentCategory>,
+    createdAt: Date,
+    updatedAt: Date
 }    
   
 export namespace ProductFiltes {

@@ -15,8 +15,7 @@ export default class MainPageComp extends React.Component<IMainPageCompProps, an
           <SliderPhoto slides={slides}/> 
         </FullScreenCont>
         <FullScreenCont>
-          <ArticleContainer articles={articles} type="articles" structure={[3,4,5,4,4]}/>
-          <ArticleContainer products={products} type="articles" structure={[3,4,5,4,4]}/>    
+          <ArticleContainer articles={articles} products={products} structure={[3, 4]}/>    
         </FullScreenCont>         
       </main>
     );

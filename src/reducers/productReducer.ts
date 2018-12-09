@@ -10,9 +10,12 @@ export const productReducer = handleActions<RootState.ProductState, IProductMode
   {
     [ProductActions.Type.FETCH_PRODUCT_SUCCESS]: (state, action) => {
       if(action.payload) {
-        return state
-      }
-      return state 
+        return {
+          ...state,
+          ...action.payload
+        }
+      }      
+      return state
     },    
   },
   initialState

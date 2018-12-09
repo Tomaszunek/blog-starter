@@ -21,34 +21,40 @@ export default class ArticleContainer extends React.Component<IArticleContainerP
   }
 
   private displayItems = () => {
-    const { structure, type, articles, products } = this.props;
-    const arrayElem = (type === "articles" ?  articles : products);
+    const { structure, articles, products } = this.props;    
     let indexElemMin = 0;
     let indexElemMax = 0;
-    const newArray:any = [];
+    const newArray:any = [];    
     const gridArr = ["grid-four", "grid-four" ,"grid-four", "grid-three", "grid-four", "grid-five"]
-    if(arrayElem) {
-      structure.forEach((item, index) => {
-        newArray[index] = [];
-        indexElemMax += item;
-        for(const i in arrayElem) {
-          if(arrayElem[i] && Number(i) >= indexElemMin && Number(i) < indexElemMax) {
-            const elm = arrayElem[i]
-            newArray[index].push(elm)
-          }
-        }
-        indexElemMin += item;          
-      })
+    let sasArray: Array<any> = [];
+    if (products && articles) {
+      sasArray = products;
+      sasArray = sasArray.concat(articles);
+    } else if(products) {
+      sasArray = products;
+    } else if (articles) {
+      sasArray = articles;
     }
+    structure.forEach((item, index) => {
+      newArray[index] = [];
+      indexElemMax += item;
+      for(const i in sasArray) {
+        if(sasArray[i] && Number(i) >= indexElemMin && Number(i) < indexElemMax) {
+          const elm = sasArray[i]
+          newArray[index].push(elm)
+        }
+      }
+      indexElemMin += item;          
+    })   
+    
     return newArray.map((item:any, index:number) => {
       const gridClassName = gridArr[item.length];
-      return (<div key={index} className={"grid " + gridClassName}>      
+      return (<div key={index} className={"grid " + gridClassName}>     
         {
-          item.map((elem:any) => (type === "articles" ?  
-            <ArticleTile key={elem.id} article={elem} /> : 
-            <ArticleTile key={elem.id} article={elem}/>
+          item.map((elem:any, ind: any) => (
+            (elem.articletType ? <ArticleTile key={ind} article={elem} /> : <ArticleTile key={ind} product={elem} />)
           ))
-        }
+        }                 
       </div>)
     })
   }
@@ -57,7 +63,6 @@ export default class ArticleContainer extends React.Component<IArticleContainerP
 export interface IArticleContainerProps{
     articles?: Array<IArticleModel>;
     products?: Array<IProductModel>
-    type: "articles" | "products";
     structure: Array<number>;
 }
 

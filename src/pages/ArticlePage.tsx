@@ -40,20 +40,23 @@ export default class ArticlePage extends React.Component<ArticlePage.IProps> {
   public render() {
     const { articles } = this.props;
     return (
-      <ArticlePageComp articles={articles}/>
+      <ArticlePageComp articles={articles} match={this.props.match}/>
     );
   }
 
   public fetchArticleContent = () => {    
-    const { actions } = this.props;
-    // actions.fetchMPContentRequest({name: "abc"})
-    return fetch('http://localhost:3002/api/contents')
+    const { actions, match } = this.props;
+    let url = "http://localhost:3002/api/contents";
+    const splitUrl = match.url.split('/');
+    if( match.path !== "/articles" ) {
+      url =`${url}/${splitUrl[splitUrl.length - 1]}`;
+    }    
+    return fetch(url)
     .then(res => res.json())
-    .then(body => {
-      actions.fetchArticleSucess(body)
-    })
-    .catch(err => console.log(err))
-  } 
+    .then(body => actions.fetchArticleSucess(body))
+    .catch(err => console.log(err))    
+  }
+  
 }
 
 
