@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Bar Search Bar should render render correctly date component 1`] = `
+<div
+  className="searchBar"
+>
+  <form
+    action=""
+  >
+    <select
+      className="contentType"
+      defaultValue={
+        Array [
+          "article",
+        ]
+      }
+      multiple={true}
+      name="findType"
+      onChange={[Function]}
+    >
+      <option
+        value="article"
+      >
+        article
+      </option>
+      <option
+        value="product"
+      >
+        product
+      </option>
+    </select>
+    <div
+      className="categoryCont"
+    >
+      Categories
+    </div>
+    <button>
+      Find
+      article
+    </button>
+  </form>
+</div>
+`;
