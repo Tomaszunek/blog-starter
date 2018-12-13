@@ -1,0 +1,22 @@
+@import 'src/styles/variables.scss';
+
+.headerPhoto {
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .headerPhotoInfo {
+        position: absolute;
+        bottom: 0px;
+        background-color: #d6d6d60d;
+        color: white;
+        max-width: 100%;
+        max-height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+}
