@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './sliderPhoto.scss'
 import { IArticleModel } from 'src/models';
-import ArticleTile from 'src/components/ArticlePage/articleTile/articleTile';
+import ArticleTile from '../../ArticlePage/articleTile/articleTile';
 
 export default class SliderPhoto extends React.Component<ISliderPhotoProps, ISliderPhotoState> {
   private interval: any;

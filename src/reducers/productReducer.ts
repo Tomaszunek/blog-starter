@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 import { RootState } from './state';
 import { IProductModel } from '../models';
-import { ProductActions } from 'src/actions';
+import { ProductActions } from '../actions';
 
 const initialState: RootState.ProductState = [
 ];

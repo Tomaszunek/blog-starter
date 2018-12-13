@@ -3,11 +3,11 @@ import './storePage.scss'
 import FullScreenCont from '../template/fullScreenCont/fullSreenCont';
 import { IProductModel } from 'src/models';
 
-import image from 'src/logo.svg'
+import image from '../../logo.svg'
 import BreadcrumbsTemplate from '../template/breadcrumbs/breadcrumbs';
 import { match } from 'react-router';
 import ArticleContainer from '../ArticlePage/articleContainer/articleContainer';
-import SearchBar from '../template/searchBar/searchBar';
+import SearchBarBlog, {AricleTypes, SearchContentType} from '../template/searchBar/searchBarBlog';
 
 export default class StorePageComp extends React.Component<IStorePageCompProps, any> {  
   public render() {
@@ -17,7 +17,7 @@ export default class StorePageComp extends React.Component<IStorePageCompProps, 
         <FullScreenCont>        
           <img src={image} alt=""/>          
         </FullScreenCont>
-        <SearchBar searchType="product"/> 
+        <SearchBarBlog searchContentType={SearchContentType.product} articleType={AricleTypes.motivation} />         
         <BreadcrumbsTemplate match={this.props.match}/>
         <ArticleContainer products={products} structure={[4,4]}/>        
       </main>

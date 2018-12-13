@@ -6,7 +6,7 @@ import { ArticleActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
-import MainPageComp from 'src/components/MainPage/MainPageComp';
+import ArticlePageComp from '../components/ArticlePage/ArticlePageComp';
 
 const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as 
   (keyof typeof ArticleFiltes.Filter)[]).map(
@@ -35,8 +35,10 @@ export namespace ProjectPage {
 
 export default class ProjectPage extends React.Component<ProjectPage.IProps> {    
   public render() {
+    const { articles } = this.props;
+    const newMatch = this.props.match;
     return (
-      <MainPageComp/>
+      <ArticlePageComp articles={articles} match={newMatch}/>
     );
   }
 }

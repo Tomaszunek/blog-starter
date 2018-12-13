@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './searchBar.scss'
 
-export default class SearchBar extends React.Component<ISearchBarProps, ISearchBarState> {
+export default class SearchBarGames extends React.Component<ISearchBarProps, ISearchBarState> {
   constructor(props: any) {
     super(props)    
   }
@@ -20,5 +20,6 @@ interface ISearchBarState {
 }
 
 interface ISearchBarProps {
-    searchType: "article" | "product"
+    searchType: "article" | "product",
+    articleType: "" | "article" | "product"
 }
