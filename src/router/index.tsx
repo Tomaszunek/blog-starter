@@ -32,7 +32,7 @@ export const RouteApp = () => (
             <Switch>
               <Route exact={true} path="/" component={MainPage} />
               <Route exact={true} path="/articles" component={ArticlePage} />
-              <Route path="/articles/:type/:slug" component={ArticleSinglePage} /> 
+              <Route path="/article/:type/:slug" component={ArticleSinglePage} /> 
               <Route path="/articles/:type" component={ArticlePage} />    
               <Route path="/projects" component={ProjectPage} />
               <Route path="/abilities" component={AbilityPage} />

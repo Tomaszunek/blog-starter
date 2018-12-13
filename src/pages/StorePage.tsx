@@ -16,7 +16,7 @@ const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as
 
 export namespace StorePage {
   export interface IProps extends RouteComponentProps<void> {
-    products: RootState.ProductState;
+    products: RootState.ProductsState;
     actions: ProductActions;
     filter: ArticleFiltes.Filter;
   }
@@ -43,15 +43,15 @@ export default class StorePage extends React.Component<StorePage.IProps> {
       <StorePageComp products={products} match={this.props.match}/>
     );
   }
-public fetchProductContent = () => {    
-  const { actions } = this.props;
-  // actions.fetchMPContentRequest({name: "abc"})
-  return fetch('http://localhost:3002/api/products')
-  .then(res => res.json())
-  .then(body => {
-    actions.fetchProductSuccess(body)
-  })
-  .catch(err => console.log(err))
+  public fetchProductContent = () => {    
+    const { actions } = this.props;
+    // actions.fetchMPContentRequest({name: "abc"})
+    return fetch('http://localhost:3002/api/products')
+    .then(res => res.json())
+    .then(body => {
+      actions.fetchProductsSuccess(body)
+    })
+    .catch(err => console.log(err))
   } 
 }
 

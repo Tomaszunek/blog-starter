@@ -7,7 +7,8 @@ export namespace ProductActions {
     EDIT_PRODUCT = 'EDIT_PRODUCT',
     SET_PRODUCT = 'SET_PRODUCT',
     DELETE_PRODUCT = 'DELETE_PRODUCT',
-    FETCH_PRODUCT_SUCCESS = 'FETCH_PRODUCT_SUCCESS'
+    FETCH_PRODUCT_SUCCESS = 'FETCH_PRODUCT_SUCCESS',
+    FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS'
   }
 
   export const addCommand = createAction<PartialPick<IProductModel, 'name'>>(Type.ADD_PRODUCT);
@@ -15,6 +16,7 @@ export namespace ProductActions {
   export const setCommand = createAction<PartialPick<IProductModel, "name">>(Type.SET_PRODUCT);
   export const deleteCommand = createAction<IProductModel['name']>(Type.DELETE_PRODUCT);
   export const fetchProductSuccess = createAction<PartialPick<IProductModel, "body">>(Type.FETCH_PRODUCT_SUCCESS);    
+  export const fetchProductsSuccess = createAction<PartialPick<IProductModel, "body">>(Type.FETCH_PRODUCTS_SUCCESS);
 }
 
 export type ProductActions = Omit<typeof ProductActions, 'Type'>;
