@@ -12,7 +12,7 @@ export default class ProductTile extends React.Component<IProductTilesProps, any
     const { id, image, name, AppContentCategories, slug, type } = this.props.product;
     return (
     <div className="articleTile" data-attr={id}>
-        <a href={`product/${slug}`}>           
+        <a href={`/product/${slug}`}>           
         <img src={'./images/placeholders/' + image} alt=""/>
         <div className="tileCont">
         {
