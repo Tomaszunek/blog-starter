@@ -10,7 +10,9 @@ export interface IArticleModel {
     image: string,
     AppContentCategories?: Array<IContentCategory>,
     createdAt: Date,
-    updatedAt: Date
+    updatedAt: Date,
+    AppContentImages?: any,
+    AppContentModels?: any
 }    
   
 export namespace ArticleFiltes {

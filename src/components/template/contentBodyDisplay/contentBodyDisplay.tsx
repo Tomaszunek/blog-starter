@@ -8,14 +8,31 @@ export default class ContentBodyDisplay extends React.Component<IContentBodyDisp
 
   public render() {
     const { body } = this.props;
+    const paragraphs = body.split('</p>');
     return (
-      <div className="contentBody">
-        <div className="body" dangerouslySetInnerHTML={{__html: body}} />
+      <div className="contentBody">        
+        {
+          paragraphs.map((p, ind) => {
+            return <div className="body" key={ind}>
+              <div dangerouslySetInnerHTML={{__html: p +  "</p>"}} />
+              {this.getImage(ind)}
+            </div>
+          })
+        }
       </div>
     );
-  }  
+  }
+  private getImage = (ind: number) => {
+    return this.props.images && this.props.images.filter((img, index) => 
+      ind === index
+    ).map((item, index) => 
+      <img key={index} src={'/images/placeholders/' + item.image} alt=""/>
+    )
+  }
 }
 
 interface IContentBodyDisplayProps {
-  body: string  
+  body: string,
+  images?: Array<any>
+  models?: Array<any>
 }

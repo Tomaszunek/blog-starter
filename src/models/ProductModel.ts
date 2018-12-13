@@ -10,7 +10,9 @@ export interface IProductModel {
     image: string,
     AppContentCategories?: Array<IContentCategory>,
     createdAt: Date,
-    updatedAt: Date
+    updatedAt: Date,
+    AppProductImages?: any,
+    AppProductModels?: any
 }    
   
 export namespace ProductFiltes {

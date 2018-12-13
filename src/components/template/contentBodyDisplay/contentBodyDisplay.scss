@@ -1,0 +1,29 @@
+.contentBody {
+    .body {
+        p {
+            font-size: 1.3em;
+            line-height: 1.5em;
+            margin: 1.625em 170px;
+            text-align: justify;
+            padding-bottom: 50px;
+            border-bottom: 1px solid;
+
+            &:first-letter {
+                font-size: 3em;
+                line-height: 1em;
+            }
+            p + &:first-letter {
+                font-size: 1em;
+                line-height: 1.25em;
+            }
+            &:last-child {
+                border-bottom: 0px solid;
+            }
+        }
+
+        img {
+            width: 150vh;
+            margin-left: 100px;
+        }
+    }
+}
