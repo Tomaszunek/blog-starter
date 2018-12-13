@@ -17,8 +17,8 @@ const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as
 
 export namespace AbilityPage {
   export interface IProps extends RouteComponentProps<void> {
-    articles: RootState.ArticleState;
-    products: RootState.ProductState;
+    articles: RootState.ArticlesState;
+    products: RootState.ProductsState;
     actions: ArticleActions;
     filter: ArticleFiltes.Filter;
   }

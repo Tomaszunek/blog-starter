@@ -16,7 +16,7 @@ const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as
 
 export namespace ArticlePage {
   export interface IProps extends RouteComponentProps<void> {
-    articles: RootState.ArticleState;
+    articles: RootState.ArticlesState;
     actions: ArticleActions;
     filter: ArticleFiltes.Filter;
   }
@@ -63,7 +63,7 @@ export default class ArticlePage extends React.Component<ArticlePage.IProps> {
     }    
     return fetch(url)
     .then(res => res.json())
-    .then(body => actions.fetchArticleSucess(body))
+    .then(body => actions.fetchArticlesSucess(body))
     .catch(err => console.log(err))    
   }
   

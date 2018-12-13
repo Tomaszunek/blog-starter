@@ -16,7 +16,7 @@ const FILTER_VALUES = (Object.keys(ArticleFiltes.Filter) as
 
 export namespace ProjectPage {
   export interface IProps extends RouteComponentProps<void> {
-    articles: RootState.ArticleState;
+    articles: RootState.ArticlesState;
     actions: ArticleActions;
     filter: ArticleFiltes.Filter;
   }

@@ -2,7 +2,7 @@ import * as React from 'react';
 import ArticleTile from '../articleTile/articleTile';
 import './articleContainer.scss'
 import { IArticleModel, IProductModel } from 'src/models';
-
+import ProductTile from '../../StorePage/ProductTile/ProductTile';
 
 export default class ArticleContainer extends React.Component<IArticleContainerProps, any> {
   constructor(props: IArticleContainerProps) {
@@ -52,7 +52,10 @@ export default class ArticleContainer extends React.Component<IArticleContainerP
       return (<div key={index} className={"grid " + gridClassName}>     
         {
           item.map((elem:any, ind: any) => (
-            (elem.articletType ? <ArticleTile key={ind} article={elem} /> : <ArticleTile key={ind} product={elem} />)
+            (elem.articleType ? 
+              <ArticleTile key={ind} article={elem} /> : 
+              <ProductTile key={ind} product={elem} />
+            )
           ))
         }                 
       </div>)
