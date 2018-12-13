@@ -36,5 +36,6 @@ describe('Search Bar', () => {
     // it('should handle change article type', () => {})     
     // it('should handle change categories select', () => {})    
     // it('should return correct json on submit', () => {});
+    });
   });
 });
