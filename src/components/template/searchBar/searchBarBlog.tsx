@@ -51,7 +51,6 @@ export default class SearchBarBlog extends React.Component<ISearchBarProps, ISea
   private onContentTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { selectedcontentTypes} = this.state;
     selectedcontentTypes.push(e.target.value);
-    console.log(selectedcontentTypes, e.target.value)
     this.setState({selectedcontentTypes});
   }
 }
