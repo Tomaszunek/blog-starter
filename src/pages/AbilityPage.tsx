@@ -34,13 +34,24 @@ export namespace AbilityPage {
   })
 )
 
-export default class AbilityPage extends React.Component<AbilityPage.IProps> {     
+export default class AbilityPage extends React.Component<AbilityPage.IProps> {
+  public componentDidMount() {
+    this.fetchAbilitiesContent();
+  }  
   public render() {
     const { abilities } = this.props;
     return (
       <AbilityPageComp abilities={abilities} match={this.props.match}/>
     );
   }
+  public fetchAbilitiesContent = () => {    
+    const { actions } = this.props;
+    const url = "http://localhost:3002/api/contents/ability";
+    return fetch(url)
+    .then(res => res.json())
+    .then(body => actions.fetchAbilitiesSucess(body))
+    .catch(err => console.log(err))    
+  }  
 }
 
 

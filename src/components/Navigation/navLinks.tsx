@@ -36,7 +36,7 @@ const Links: React.SFC = () => {
             <NavLink to="/abilities">abilities</NavLink>
         </li>
         <li>
-            <NavLink to="/store">store</NavLink>
+            <NavLink to="/products">store</NavLink>
         </li>
         <li>
             <NavLink to="/about">about</NavLink>

@@ -33,13 +33,25 @@ export namespace ProjectPage {
   })
 )
 
-export default class ProjectPage extends React.Component<ProjectPage.IProps> {    
+export default class ProjectPage extends React.Component<ProjectPage.IProps> {
+  public componentDidMount() {
+    this.fetchProjectContent();
+  }
   public render() {
     const { projects } = this.props;
     return (
       <ProjectPageComp projects={projects} match={this.props.match}/>
     );
   }
+  public fetchProjectContent = () => {    
+    const { actions } = this.props;
+    const url = "http://localhost:3002/api/contents/project";
+    return fetch(url)
+    .then(res => res.json())
+    .then(body => actions.fetchProjectsSucess(body))
+    .catch(err => console.log(err))    
+  }  
 }
+
 
 
