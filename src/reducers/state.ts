@@ -4,6 +4,8 @@ import { IMainPageContent } from 'src/models/MainPageContentModel';
 export interface IRootState {
   articles: RootState.ArticlesState;
   products: RootState.ProductsState;
+  abilities: RootState.AbilitiesState;
+  projects: RootState.ProjectsState;
   article: RootState.ArticleState;
   product: RootState.ProductState;
   mainpageContent: RootState.MainPageContentState;
@@ -16,4 +18,6 @@ export namespace RootState {
   export type ArticleState = IArticleModel;
   export type ProductState = IProductModel
   export type MainPageContentState = IMainPageContent;
+  export type AbilitiesState = Array<IArticleModel>;
+  export type ProjectsState = Array<IArticleModel>;
 }

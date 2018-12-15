@@ -65,8 +65,7 @@ export default class ArticlePage extends React.Component<ArticlePage.IProps> {
     .then(res => res.json())
     .then(body => actions.fetchArticlesSucess(body))
     .catch(err => console.log(err))    
-  }
-  
+  }  
 }
 
 

@@ -4,7 +4,7 @@ import { NavLink }  from 'react-router-dom';
 const Links: React.SFC = () => {
  return (
     <ul>
-        <li className="login">
+        {/* <li className="login">
             <NavLink to="/login">login</NavLink>
         </li>
         <li>
@@ -21,9 +21,9 @@ const Links: React.SFC = () => {
         </li>
         <li>
             <NavLink to="/products">store</NavLink>
-        </li>
+        </li> */}
 
-        {/* <li className="login">
+        <li className="login">
             <NavLink to="/login">login</NavLink>
         </li>
         <li>
@@ -40,7 +40,7 @@ const Links: React.SFC = () => {
         </li>
         <li>
             <NavLink to="/about">about</NavLink>
-        </li>      */}
+        </li>     
     </ul>
  )
 }

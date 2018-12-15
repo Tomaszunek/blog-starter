@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './ProductTile.scss'
-import { IProductModel } from 'src/models';
+import { IProductModel } from '../../../models';
 import CategoryTags from '../../template/categoryTags/categoryTags';
 
 export default class ProductTile extends React.Component<IProductTilesProps, any> {
