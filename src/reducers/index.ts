@@ -5,6 +5,8 @@ import { articleReducer } from './articleReducer';
 import { productsReducer } from './productsReducer';
 import { productReducer } from './productReducer';
 import { mainpageReducer } from './mainPageReducer';
+import { abilitiesReducer } from './abilitiesReducer';
+import { projectsReducer } from './projectsReducer';
 
 export { IRootState, RootState };
 
@@ -15,5 +17,7 @@ export const rootReducer = combineReducers<IRootState>({
     articles: articlesReducer as any,
     product: productReducer as any,
     products: productsReducer as any,
+    projects: projectsReducer as any,
+    abilities: abilitiesReducer as any,
     mainpageContent: mainpageReducer as any,
 });

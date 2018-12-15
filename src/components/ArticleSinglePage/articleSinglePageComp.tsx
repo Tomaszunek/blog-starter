@@ -10,7 +10,6 @@ import ContentBodyDisplay from '../template/contentBodyDisplay/contentBodyDispla
 export default class ArticleSinglePageComp extends React.Component<IArticleSinglePageComp, any> {  
   public render() {
     const { image, createdAt, AppContentCategories, name, type, body, AppContentImages, AppContentModels } = this.props.article;
-    console.log(this.props)
     return (
       <div className="articleSinglePage">
         <FullScreenCont>        
