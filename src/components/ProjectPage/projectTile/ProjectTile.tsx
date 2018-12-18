@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './projectTile.scss';
 import { IArticleModel } from '../../../models';
-import CategoryTags from 'src/components/template/categoryTags/categoryTags';
+import CategoryTags from '../../../components/template/categoryTags/categoryTags';
 
 export default class ProjectTile extends React.Component<IProjectTileProps, any> {
     constructor(props: any) {
