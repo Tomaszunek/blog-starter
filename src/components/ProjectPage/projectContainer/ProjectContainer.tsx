@@ -26,5 +26,6 @@ export default class ProjectContainer extends React.Component<IProjectContainerP
 
 interface IProjectContainerProps {
     addedClass?: string,
+    contentType: "ability" | "project"
     content: Array<IArticleModel>
 }

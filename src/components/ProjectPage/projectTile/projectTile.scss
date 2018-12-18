@@ -1,6 +1,24 @@
 @import 'src/styles/variables.scss';
 
 .projectTile {
-    border: 1px solid $font-c;
-    padding: 10px;
+    border: 1px solid $gray;
+    color: $font-c;
+    text-decoration: none;
+
+    img {
+        width: 96%;
+        padding: 10px;
+    }
+
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-spacing: 0px;
+        td {
+            width: calc(100% / 3);
+            border: 1px solid $gray;
+            text-align: center;
+            padding: 5px 0;
+        }
+    }
 }
