@@ -49,6 +49,7 @@ export default class ArticleContainer extends React.Component<IArticleContainerP
     
     return newArray.map((item:any, index:number) => {
       const gridClassName = gridArr[item.length];
+      console.log(item)
       return (<div key={index} className={"grid " + gridClassName}>     
         {
           item.map((elem:any, ind: any) => (
