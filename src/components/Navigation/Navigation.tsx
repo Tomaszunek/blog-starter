@@ -30,7 +30,6 @@ export default class Navigation extends React.Component<IProps, IState> {
       });
   }
   public render() {
-    console.log(process.env)
     return (
       <nav className={this.state.navBar}>
         <NavLink to="/" className='logo'>

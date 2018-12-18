@@ -36,7 +36,7 @@ export default class ArticleSinglePage extends React.Component<any> {
 
   public fetchArticleContent = (urlSlug: string) => {    
     const { actions } = this.props;
-    const url = "http://localhost:3002/api/contentbyslug/" + urlSlug;       
+    const url = `${process.env.api_path}/contentbyslug/` + urlSlug;       
     return fetch(url)
     .then(res => res.json())
     .then(body => actions.fetchArticleSucess(body))

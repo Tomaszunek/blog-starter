@@ -46,7 +46,7 @@ export default class AbilityPage extends React.Component<AbilityPage.IProps> {
   }
   public fetchAbilitiesContent = () => {    
     const { actions } = this.props;
-    const url = "http://localhost:3002/api/contents/ability";
+    const url = `${process.env.api_path}/contents/ability`;
     return fetch(url)
     .then(res => res.json())
     .then(body => actions.fetchAbilitiesSucess(body))

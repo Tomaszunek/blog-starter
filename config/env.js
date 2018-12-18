@@ -61,7 +61,6 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
 const REACT_APP = /^REACT_APP_/i;
 
 function getClientEnvironment(publicUrl) {
-  console.log(process.env)
   const raw = Object.keys(process.env)
     .filter(key => REACT_APP.test(key))
     .reduce(
@@ -81,10 +80,10 @@ function getClientEnvironment(publicUrl) {
         serv_type: process.env.SERVICE_TYPE,
         desktop: process.env.desktop,
         api_path: (process.env.desktop ? 
-          'http://localhost:3002/' : 
+          'http://localhost:3002/api' : 
           (process.env.SERVICE_TYPE === 'games' ? 
-            'https://prohumangamesapi.herokuapp.com/api/': 
-            'https://prohumanblogapi.herokuapp.com/api/'
+            'https://prohumangamesapi.herokuapp.com/api': 
+            'https://prohumanblogapi.herokuapp.com/api'
           )
         )
       }
