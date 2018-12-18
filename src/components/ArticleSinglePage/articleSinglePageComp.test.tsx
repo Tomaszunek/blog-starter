@@ -33,8 +33,8 @@ describe('Error Page', () => {
             expect(tree).toMatchSnapshot();
         })
         it('component should contains compoments', () => {
-            expect(app.exists('.breadcrumbs')).toBeTruthy();
-            expect(app.exists('.fullScreenCont')).toBeTruthy();
+            expect(app.find('.breadcrumbs').length).toEqual(1);
+            expect(app.find('.fullScreenCont').length).toEqual(1);
         })
         it('should have proper props', () => {
             expect(app.instance().props.article).toBe(article);

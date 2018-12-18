@@ -16,6 +16,7 @@ describe('Error Page', () => {
       expect(tree).toMatchSnapshot();
     })
     it.skip('should render proper count item', () => {
+      console.log(app.debug())
     })
   });
 }); 
