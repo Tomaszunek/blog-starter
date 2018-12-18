@@ -1,0 +1,24 @@
+@import 'src/styles/variables.scss';
+
+.errorPage {
+    margin:auto;
+    width: 50%;
+    margin-top: 250px;
+    margin-bottom: 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    color: $font-c;
+
+    h1 {
+        font-size: 3em;        
+    }
+
+    p {
+        font-size: 1.8em;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 45px;
+    }
+}
