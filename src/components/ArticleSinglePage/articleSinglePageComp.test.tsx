@@ -1,15 +1,46 @@
-// import * as React from 'react';
-// import { mount } from 'enzyme';
-// import ArticlePageComp from './ArticlePageComp'
+import * as React from 'react';
+import { mount } from 'enzyme';
+import * as renderer from 'react-test-renderer';
+import ArticleSinglePageComp from './articleSinglePageComp'
+import { IArticleModel } from 'src/models';
 
-describe('Article Single Page Component', () => {
-  describe('when isLoading is false', () => {
-    it('should render children', () => {      
-      // const wrapper = mount(
-      //   <div>abc</div>
-      // );
-      // expect(wrapper.html()).toEqual('<div class=\"loadingScreen\">LoadingScreen</div>');
-      // wrapper.unmount();
+describe('Error Page', () => {
+    describe('Component should render right', () => {
+        let app:any;
+        const testMatch:any = {
+            path: '',
+            params: {},
+            url: ''
+        };
+        const article:IArticleModel = {
+            id: 1,
+            type: "ability",
+            articleType: "ability",
+            body: "body",
+            createdAt: new Date(1545167325 *1000),
+            image: "images/placeholder/abc.jpg",
+            name: "woda",
+            slug: "woda",
+            updatedAt: new Date(1545167325 *1000)
+        }
+        beforeEach(() => {
+            app = mount(<ArticleSinglePageComp article={article} match={testMatch}/>);
+        })
+        it('render correctly snapshot component', () => {
+            const tree = renderer
+            .create(<ArticleSinglePageComp article={article} match={testMatch}/>)
+            .toJSON();
+            expect(tree).toMatchSnapshot();
+        })
+        it('component should contains compoments', () => {
+            expect(app.exists('.breadcrumbs')).toBeTruthy();
+            expect(app.exists('.fullScreenCont')).toBeTruthy();
+            expect(app.find('img')).toBeTruthy();
+        })
+        it('should have proper props', () => {
+            expect(app.instance().props.article).toBe(article);
+            expect(app.instance().props.match).toBe(testMatch);
+        })
+        
     });
   });
-});
