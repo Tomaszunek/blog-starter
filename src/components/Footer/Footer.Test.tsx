@@ -1,15 +1,21 @@
-// import * as React from 'react';
-// import { mount } from 'enzyme';
-// import ArticlePageComp from './ArticlePageComp'
+import * as React from 'react';
+import { mount } from 'enzyme';
+import * as renderer from 'react-test-renderer';
+import Footer from './Footer'
 
-describe('Footer', () => {
-  describe('when isLoading is false', () => {
-    it('should render children', () => {      
-      // const wrapper = mount(
-      //   <div>abc</div>
-      // );
-      // expect(wrapper.html()).toEqual('<div class=\"loadingScreen\">LoadingScreen</div>');
-      // wrapper.unmount();
-    });
+describe('Error Page', () => {
+  describe('Component should render right', () => {
+    let app:any;             
+    beforeEach(() => {
+      app = mount(<Footer/>);
+    })
+    it('render correctly snapshot component', () => {
+      const tree = renderer
+      .create(<Footer/>)
+      .toJSON();
+      expect(tree).toMatchSnapshot();
+    })
+    it.skip('should render proper count item', () => {
+    })
   });
-});
+}); 

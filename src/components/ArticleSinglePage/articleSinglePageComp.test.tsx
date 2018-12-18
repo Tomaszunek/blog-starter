@@ -35,7 +35,6 @@ describe('Error Page', () => {
         it('component should contains compoments', () => {
             expect(app.exists('.breadcrumbs')).toBeTruthy();
             expect(app.exists('.fullScreenCont')).toBeTruthy();
-            expect(app.find('img')).toBeTruthy();
         })
         it('should have proper props', () => {
             expect(app.instance().props.article).toBe(article);
