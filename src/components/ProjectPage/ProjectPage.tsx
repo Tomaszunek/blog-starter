@@ -19,7 +19,7 @@ export default class ProjectPageComp extends React.Component<IProjectPageProps, 
                     <img className="headerImage" src="../images/backgroundMainPages/news.jpg" alt=""/>
                 </FullScreenCont>
                 <BreadcrumbsTemplate match={this.props.match}/>
-                <ProjectContainer content={projects}/>
+                <ProjectContainer contentType="project" content={projects} />
             </main>
         );
     }

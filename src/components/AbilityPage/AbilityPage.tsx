@@ -19,7 +19,7 @@ export default class AbilityPageComp extends React.Component<IAbilityPageProps, 
                     <img className="headerImage" src="../images/backgroundMainPages/news.jpg" alt=""/>
                 </FullScreenCont>
                 <BreadcrumbsTemplate match={this.props.match}/>
-                <ProjectContainer content={abilities}/>
+                <ProjectContainer contentType="ability" content={abilities}/>
             </main>
         );
     }
