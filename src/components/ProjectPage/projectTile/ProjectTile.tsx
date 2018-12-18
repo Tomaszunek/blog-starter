@@ -9,24 +9,30 @@ export default class ProjectTile extends React.Component<IProjectTileProps, any>
     }
 
     public render() {
-        const { name, type, image, AppContentCategories, slug, articleType, createdAt, updatedAt } = this.props.article;
+        const { name, body, type, image, AppContentCategories, slug, articleType, createdAt, updatedAt } = this.props.article;
         const url = `${type}/${slug}`;
         return (
-            <a className={"projectTile " + type} href={url}>
+            <a className={"projectTile " + type} href={(type === "project" ? url : undefined)}>
                 <img src={"/images/projects/" +  image} alt=""/>
                 <div className="categoryTile">
                     <CategoryTags articleType={type} categories={AppContentCategories}/>
                     <span>{name}</span>
                 </div>
-                <table>
-                    <tbody>
-                        <tr>                            
-                            <td>Type: {articleType}</td>
-                            <td>Added: {createdAt}</td>
-                            <td>Last Update: {updatedAt}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                {
+                    (type === "project") ? (
+                        <table>
+                            <tbody>
+                                <tr>                            
+                                    <td>Type: {articleType}</td>
+                                    <td>Added: {createdAt}</td>
+                                    <td>Last Update: {updatedAt}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    ) : (
+                        <p>{body}</p>
+                    )
+                }
             </a>
         );
     }
