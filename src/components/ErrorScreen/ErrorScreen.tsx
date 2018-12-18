@@ -5,7 +5,7 @@ export default class ErrorScreen extends React.Component {
   public render() {
     return (
       <div className="errorScreen">
-        <img src="/images/components/404Error.gif" alt=""/>
+        ErrorScreen
       </div>
     );
   }

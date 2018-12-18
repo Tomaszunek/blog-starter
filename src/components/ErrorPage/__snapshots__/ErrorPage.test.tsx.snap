@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Component should render right render correctly snapshot component 1`] = `
+<div
+  className="errorPage"
+>
+  <img
+    alt=""
+    src="/images/components/404Error.gif"
+  />
+  <div>
+    <h1>
+      Its 404 Page :)
+    </h1>
+    <p>
+      Something went wrong if you came here.
+    </p>
+    <p>
+      Please if you like, talk to us about this problem.
+    </p>
+  </div>
+</div>
+`;
