@@ -4,10 +4,27 @@
     border: 1px solid $gray;
     color: $font-c;
     text-decoration: none;
+    position: relative;
 
     img {
         width: 96%;
         padding: 10px;
+    }
+
+    .categoryTile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 96%;
+        margin: 10px;
+
+        span {
+            margin: 170px 0 0 0;
+            float: left;
+            background-color: $cat-normal-bg-alpha;
+            border-radius: 0 30px 30px 0;
+            padding: 10px 80px;
+        }
     }
 
     table {
@@ -16,9 +33,14 @@
         border-spacing: 0px;
         td {
             width: calc(100% / 3);
-            border: 1px solid $gray;
+            border-top: 1px solid $gray;
+            border-right: 1px solid $gray;
             text-align: center;
             padding: 5px 0;
+
+            &:last-child {
+                border-right: 0px;
+            }
         }
     }
 }
