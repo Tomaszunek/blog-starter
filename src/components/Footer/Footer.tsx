@@ -31,29 +31,29 @@ export default class Footer extends React.Component {
     if(process.env.serv_type === "blog") {
       if(num === 1) {
         return <>
-            <a href="articles/tech">technology</a>
-            <a href="articles/spiritual">spiritual</a>
-            <a href="articles/psychology">psychology</a>
+            <a href="articles/tech">Technology</a>
+            <a href="articles/spiritual">Spiritual</a>
+            <a href="articles/psychology">Psychology</a>
         </>
       } else {
         return <>
-            <a href="store">store</a>
-            <a href="articles/motivation">motivation</a>
-            <a href="login">login</a>   
+            <a href="store">Store</a>
+            <a href="articles/motivation">Motivation</a>
+            <a href="login">Login</a>   
         </>
       }
     } else if(process.env.serv_type === "games") {
       if(num === 1) {
         return <>
-            <a href="articles/news">news</a>
-            <a href="projects">projects</a>
-            <a href="abilities">abilities</a>   
+            <a href="articles/news">News</a>
+            <a href="projects">Projects</a>
+            <a href="abilities">Abilities</a>   
         </>
       } else {
         return <>
-            <a href="store">store</a>
-            <a href="about">about</a>
-            <a href="login">login</a>   
+            <a href="store">Store</a>
+            <a href="about">About</a>
+            <a href="login">Login</a>   
         </>
       }
     } else  {
