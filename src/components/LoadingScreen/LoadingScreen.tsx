@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './loadingScreen.scs'
+import './loadingScreen.scss'
 
 export default class LoadingScreen extends React.Component<ILoadingScreenProps, any> {    
   public render() {
