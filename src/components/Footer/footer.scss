@@ -2,4 +2,65 @@
 
 footer {
     background-color: $background;
+    text-align: center;
+    padding-bottom: 10px;
+    .upperFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        
+        .links {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 40px;
+            margin-right: 120px;
+    
+            a {
+                color: $font-c;
+                font-size: 25px;
+                text-decoration: none;
+
+                &.linkedin {
+                    &:hover {
+                        color: #0077B5;
+                    }
+
+                }
+                &.facebook {
+                    &:hover {
+                        color: #3b5998;
+                    }
+                }
+                &.patronite {
+                    &:hover {
+                        color: red;
+                    }
+                }
+                &.twitch {
+                    &:hover {
+                        color: #6441a5;
+                    }
+                }
+                &.twitter {
+                    &:hover {
+                        color: #1da1f2;
+                    }
+                }
+                &.youtube {
+                    &:hover {
+                        color: #ff0000;
+                    }
+                }
+            }
+        }
+
+        form {
+            display: grid;
+        }
+    }    
+
 }

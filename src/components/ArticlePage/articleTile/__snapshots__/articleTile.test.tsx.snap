@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Component should render right render correctly snapshot component 1`] = `
+<div
+  className="articleTile"
+  data-attr={1}
+>
+  <a
+    href="/article/ability/woda"
+  >
+    <img
+      alt=""
+      src="./images/placeholders/images/placeholder/abc.jpg"
+    />
+    <div
+      className="tileCont"
+    >
+      <div
+        className="categoryTagsCont ability"
+      >
+        <p
+          className="category"
+        >
+          a
+        </p>
+        <p
+          className="category"
+        >
+          a
+        </p>
+      </div>
+      <div>
+        <span>
+          woda
+        </span>
+      </div>
+    </div>
+  </a>
+</div>
+`;

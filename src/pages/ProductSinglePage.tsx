@@ -38,7 +38,7 @@ export default class ProductSinglePage extends React.Component<any> {
 
   public fetchProductContent = (urlSlug: string) => {    
     const { actions } = this.props;
-    const url = "http://localhost:3002/api/productbyslug/" + urlSlug;       
+    const url = `${process.env.api_path}/productbyslug/` + urlSlug;       
     return fetch(url)
     .then(res => res.json())
     .then(body => actions.fetchProductSuccess(body))

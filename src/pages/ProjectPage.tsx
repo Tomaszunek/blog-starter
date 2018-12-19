@@ -45,7 +45,7 @@ export default class ProjectPage extends React.Component<ProjectPage.IProps> {
   }
   public fetchProjectContent = () => {    
     const { actions } = this.props;
-    const url = "http://localhost:3002/api/contents/project";
+    const url = `${process.env.api_path}/contents/project`;
     return fetch(url)
     .then(res => res.json())    
     .then(body => actions.fetchProjectsSucess(body))

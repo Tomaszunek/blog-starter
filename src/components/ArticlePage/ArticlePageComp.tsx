@@ -17,7 +17,10 @@ export default class ArticlePageComp extends React.Component<IArticlePageComp, a
           <SearchBar searchContentType={SearchContentType.article} articleType={AricleTypes.motivation} />         
         </FullScreenCont>
         <BreadcrumbsTemplate match={this.props.match}/>
-        <ArticleContainer articles={articles} structure={[4,4]}/>        
+        <ArticleContainer articles={articles} 
+                          structure={[4,4,4,4,4,4].filter((item, ind) => 
+                            ind <= Math.floor(articles.length / 4)
+        )}/>        
       </main>
     );
   }

@@ -77,6 +77,15 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        serv_type: process.env.SERVICE_TYPE,
+        desktop: process.env.desktop,
+        api_path: (process.env.desktop ? 
+          'http://localhost:3002/api' : 
+          (process.env.SERVICE_TYPE === 'games' ? 
+            'https://prohumangamesapi.herokuapp.com/api': 
+            'https://prohumanblogapi.herokuapp.com/api'
+          )
+        )
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

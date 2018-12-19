@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Page Component should render right render correctly snapshot component 1`] = `
+<main>
+  <div
+    className="fullScreenCont"
+  >
+    <img
+      alt=""
+      className="headerImage"
+      src="../images/backgroundMainPages/news.jpg"
+    />
+  </div>
+  <ul
+    className="breadcrumbs"
+  >
+    <li
+      className="home"
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="current"
+    >
+      <a />
+    </li>
+  </ul>
+  <div
+    className="projectContainer "
+  >
+    <a
+      className="projectTile ability"
+      href={undefined}
+    >
+      <img
+        alt=""
+        src="/images/projects/images/placeholder/abc.jpg"
+      />
+      <div
+        className="categoryTile"
+      >
+        <span>
+          woda
+        </span>
+      </div>
+      <p>
+        body
+      </p>
+    </a>
+    <a
+      className="projectTile ability"
+      href={undefined}
+    >
+      <img
+        alt=""
+        src="/images/projects/images/placeholder/abc.jpg"
+      />
+      <div
+        className="categoryTile"
+      >
+        <span>
+          woda
+        </span>
+      </div>
+      <p>
+        body
+      </p>
+    </a>
+  </div>
+</main>
+`;

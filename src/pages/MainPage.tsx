@@ -49,8 +49,7 @@ export default class MainPage extends React.Component<MainPage.IProps> {
 
 public fetchMainPageContent = () => {    
   const { actions } = this.props;
-  actions.fetchMPContentRequest({name: "abc"})
-  return fetch('http://localhost:3002/api/mainpage-content')
+  return fetch(`${process.env.api_path}/mainpage-content`)
   .then(res => res.json())
   .then(body => {
     actions.fetchMPContentSucesss(groupByType(body))

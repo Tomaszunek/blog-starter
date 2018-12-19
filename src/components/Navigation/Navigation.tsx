@@ -34,7 +34,7 @@ export default class Navigation extends React.Component<IProps, IState> {
       <nav className={this.state.navBar}>
         <NavLink to="/" className='logo'>
           <span>
-            prohuman
+            prohuman {(process.env.serv_type ===  "blog" ? "blog" : "games")}
           </span>
         </NavLink>
         <Links/>

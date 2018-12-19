@@ -45,8 +45,7 @@ export default class StorePage extends React.Component<StorePage.IProps> {
   }
   public fetchProductContent = () => {    
     const { actions } = this.props;
-    // actions.fetchMPContentRequest({name: "abc"})
-    return fetch('http://localhost:3002/api/products')
+    return fetch(`${process.env.api_path}/products`)
     .then(res => res.json())
     .then(body => {
       actions.fetchProductsSuccess(body)

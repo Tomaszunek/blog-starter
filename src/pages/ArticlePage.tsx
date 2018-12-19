@@ -55,7 +55,7 @@ export default class ArticlePage extends React.Component<ArticlePage.IProps> {
 
   public fetchArticleContent = (urlType?: string) => {    
     const { actions, match } = this.props;
-    let url = "http://localhost:3002/api/contents-article";
+    let url = `${process.env.api_path}/contents-article`;
     const splitUrl = match.url.split('/');
     const splitedUrl = (urlType ? urlType : splitUrl[splitUrl.length - 1])
     if( match.path !== "/articles" ) {
