@@ -2,4 +2,57 @@
 
 .loadingScreen {
     display: none;
+    position: absolute;
+    background: gray;
+    top: 0;
+    left: 2px;
+    width: 99vw;
+    height: 200vh;
+    z-index: 100000;
+
+    &.showLoading {
+        display: block;
+        
+        .loadImage {
+
+            @keyframes firstAnim {
+                0%{
+                    Transform: scale(1);
+                }
+                50%{
+                    Transform: scale(1.5);
+                }
+                100%{
+                    Transform: scale(2);
+                }
+            }
+            @keyframes rotate {
+                0%{
+                    Transform: rotate(0) scale(1);
+                }
+                50%{
+                    Transform: rotate(180deg) scale(1.1);
+                }
+                100%{
+                    Transform: rotate(360deg) scale(1);
+                }
+            }
+
+            animation: firstAnim 1s forwards;
+            animation: rotate 2s infinite;
+        }
+    }
+
+    .loadImage {
+        background: url($logo-black);
+        background-repeat: no-repeat;
+        background-size: 30%;
+        background-position: 50% 50%;
+        width: 50%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;     
+    }
+
+    
 }

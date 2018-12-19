@@ -25,7 +25,7 @@ export const RouteApp = () => (
   <Provider store={store}>   
     <Router history={history}>
       <div>
-        <LoadingScreen/>
+        <LoadingScreen showLoading={false}/>
         <ErrorScreen/>
         <Navigation/>
           <div className="container">
