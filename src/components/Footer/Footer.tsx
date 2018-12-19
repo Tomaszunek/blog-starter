@@ -17,8 +17,8 @@ export default class Footer extends React.Component {
             <a className="youtube" href="">Youtube</a>
           </div>
           <form action="">
-            <input type="text"/>
-            <textarea name="" id="" cols={30} rows={10} defaultValue=""/>
+            <input type="text" placeholder="Who you are?"/>
+            <textarea name="" id="" cols={30} rows={7} defaultValue="" placeholder="Please type your massage. :)"/>
             <button type="submit">Send</button>
           </form>          
         </div>

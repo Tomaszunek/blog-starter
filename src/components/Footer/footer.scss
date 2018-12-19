@@ -18,6 +18,7 @@ footer {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-gap: 40px;
             margin-right: 120px;
+            width: 45%;
     
             a {
                 color: $font-c;
@@ -101,6 +102,55 @@ footer {
 
         form {
             display: grid;
+            grid-gap: 5px;
+            width: 25%;
+
+            $breadcrumb-theme-1: rgba(20, 17, 219, 0.5);
+            $breadcrumb-theme-2: rgba(255, 255, 255, 0.13);  
+            $breadcrumb-theme-3: rgba(30, 67, 233, 0.5); 
+            $breadcrumb-theme-4: rgba(33, 44, 196, 0.5); 
+
+            input {
+                background-color:  $breadcrumb-theme-1;
+                color: white;
+                border-radius: 8px;
+                border: 3px solid $breadcrumb-theme-1;
+                padding: 6px 8px;
+                font-size: 18px;
+                &::placeholder {
+                    color: white;  
+                }
+                &:focus {
+                    border-radius: 0px;
+                    background-color: $breadcrumb-theme-3;
+                }
+            }
+            textarea {
+                background-color:  $breadcrumb-theme-1;
+                color: white;
+                border-radius: 8px;
+                border: 3px solid $breadcrumb-theme-1;
+                padding: 2px 8px;
+                font-size: 18px;
+                &::placeholder {
+                    color: white;  
+                }
+                &:focus {
+                    border-radius: 0px;
+                    background-color: $breadcrumb-theme-3;
+                }
+            }
+
+            button {
+                background-color:  $breadcrumb-theme-1;
+                color: white;
+                border-radius: 8px;
+                border: 3px solid $breadcrumb-theme-1;
+                padding: 2px 8px;
+                color: white;
+                margin: 0 150px 0px 150px;
+                font-size: 18px;
+            }
         }
     }    
 
