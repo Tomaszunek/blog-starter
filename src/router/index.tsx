@@ -22,7 +22,7 @@ export const RouteApp = () => (
   <Provider store={store}>   
     <Router history={history}>
       <div>
-        <LoadingScreen appSystem={store.getState().appSystem} />
+        <LoadingScreen appSystem={store.getState().appSystem}/>
         <ErrorScreen appSystem={store.getState().appSystem}/>
         <Navigation/>
           <div className="container">
