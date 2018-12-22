@@ -1,4 +1,4 @@
-import { IArticleModel, IProductModel } from '../models';
+import { IArticleModel, IProductModel, IAppSystem } from '../models';
 import { IMainPageContent } from 'src/models/MainPageContentModel';
 
 export interface IRootState {
@@ -9,6 +9,7 @@ export interface IRootState {
   article: RootState.ArticleState;
   product: RootState.ProductState;
   mainpageContent: RootState.MainPageContentState;
+  appSystem: RootState.AppSystemState;
   router?: any;
 }
 
@@ -20,4 +21,5 @@ export namespace RootState {
   export type MainPageContentState = IMainPageContent;
   export type AbilitiesState = Array<IArticleModel>;
   export type ProjectsState = Array<IArticleModel>;
+  export type AppSystemState = IAppSystem
 }

@@ -1,3 +1,4 @@
 export interface IAppSystem {
-    loading: boolean   
+    loading: boolean,
+    error: boolean   
 } 
