@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { AbilitiesActions } from '../actions';
+import { AbilitiesActions, AppSystemActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
@@ -19,6 +19,7 @@ export namespace AbilityPage {
   export interface IProps extends RouteComponentProps<void> {
     abilities: RootState.AbilitiesState;
     actions: AbilitiesActions;
+    systemActions: AppSystemActions;
     filter: ArticleFiltes.Filter;
   }
 }
@@ -29,8 +30,9 @@ export namespace AbilityPage {
     const filter = FILTER_VALUES.find((value) => value === hash) || ArticleFiltes.Filter.SHOW_ALL;
     return { abilities: state.abilities, filter };
   },  
-  (dispatch: Dispatch): Pick<AbilityPage.IProps, 'actions'> => ({
-    actions: bindActionCreators(omit(AbilitiesActions, 'Type'), dispatch)
+  (dispatch: Dispatch): Pick<AbilityPage.IProps, 'actions' | 'systemActions'> => ({
+    actions: bindActionCreators(omit(AbilitiesActions, 'Type'), dispatch),
+    systemActions: bindActionCreators(omit(AppSystemActions, 'Type'), dispatch),
   })
 )
 
@@ -45,11 +47,15 @@ export default class AbilityPage extends React.Component<AbilityPage.IProps> {
     );
   }
   public fetchAbilitiesContent = () => {    
-    const { actions } = this.props;
+    const { actions, systemActions } = this.props;
     const url = `${process.env.api_path}/contents/ability`;
+    systemActions.loadingStart({loading: true})
     return fetch(url)
     .then(res => res.json())
-    .then(body => actions.fetchAbilitiesSucess(body))
+    .then(body => {
+      actions.fetchAbilitiesSucess(body)
+      systemActions.loadingEnd({loading: false})
+    })
     .catch(err => console.log(err))    
   }  
 }

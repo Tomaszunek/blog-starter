@@ -1,19 +1,27 @@
 import * as React from 'react';
 import './loadingScreen.scss'
+import { IRootState, RootState } from '../../reducers';
+import { connect } from 'react-redux';
 
-export default class LoadingScreen extends React.Component<ILoadingScreenProps, any> {    
+namespace LoadingScreen {
+  export interface IProps {    
+    appSystem: RootState.AppSystemState;
+  }
+}
+
+@connect(
+  (state: IRootState, ownProps): Pick<LoadingScreen.IProps, 'appSystem'> => {
+    return { appSystem: state.appSystem };
+  }
+)
+
+export default class LoadingScreen extends React.Component<LoadingScreen.IProps> {
   public render() {
-    const { showLoading } = this.props;
+    const { loading } = this.props.appSystem;
     return (
-      <div className={"loadingScreen " + (showLoading ? "showLoading" : '')}>
+      <div className={"loadingScreen " + (loading ? "showLoading" : '')}>
         <div className="loadImage"/>
       </div>
     );
   }
 }
-
-
-interface ILoadingScreenProps {
-  showLoading: boolean
-}
-

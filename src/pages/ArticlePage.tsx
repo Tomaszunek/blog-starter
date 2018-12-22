@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { ArticleActions } from '../actions';
+import { ArticleActions, AppSystemActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
@@ -18,6 +18,7 @@ export namespace ArticlePage {
   export interface IProps extends RouteComponentProps<void> {
     articles: RootState.ArticlesState;
     actions: ArticleActions;
+    systemActions: AppSystemActions
     filter: ArticleFiltes.Filter;
   }
 }
@@ -28,8 +29,9 @@ export namespace ArticlePage {
     const filter = FILTER_VALUES.find((value) => value === hash) || ArticleFiltes.Filter.SHOW_ALL;
     return { articles: state.articles, filter };
   },  
-  (dispatch: Dispatch): Pick<ArticlePage.IProps, 'actions'> => ({
-    actions: bindActionCreators(omit(ArticleActions, 'Type'), dispatch)
+  (dispatch: Dispatch): Pick<ArticlePage.IProps, 'actions' | 'systemActions'> => ({
+    actions: bindActionCreators(omit(ArticleActions, 'Type'), dispatch),
+    systemActions: bindActionCreators(omit(AppSystemActions, 'Type'), dispatch),
   })
 )
 
@@ -54,16 +56,20 @@ export default class ArticlePage extends React.Component<ArticlePage.IProps> {
   }
 
   public fetchArticleContent = (urlType?: string) => {    
-    const { actions, match } = this.props;
+    const { actions, match, systemActions } = this.props;
     let url = `${process.env.api_path}/contents-article`;
     const splitUrl = match.url.split('/');
     const splitedUrl = (urlType ? urlType : splitUrl[splitUrl.length - 1])
     if( match.path !== "/articles" ) {
       url =`${url}/${splitedUrl}`;
-    }    
+    }
+    systemActions.loadingStart({loading: true})    
     return fetch(url)
     .then(res => res.json())
-    .then(body => actions.fetchArticlesSucess(body))
+    .then(body => {
+      actions.fetchArticlesSucess(body)
+      systemActions.loadingEnd({loading: false})
+    })
     .catch(err => console.log(err))    
   }  
 }

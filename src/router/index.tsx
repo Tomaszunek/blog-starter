@@ -15,9 +15,6 @@ import Footer from '../components/Footer/Footer';
 import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 import ErrorScreen from '../components/ErrorScreen/ErrorScreen';
 import '../index.scss';
-  
-  
-  
   const store = configureStore();
   const history = createBrowserHistory();
 
@@ -25,8 +22,8 @@ export const RouteApp = () => (
   <Provider store={store}>   
     <Router history={history}>
       <div>
-        <LoadingScreen showLoading={store.getState().appSystem.loading}/>
-        <ErrorScreen showError={store.getState().appSystem.error}/>
+        <LoadingScreen appSystem={store.getState().appSystem} />
+        <ErrorScreen appSystem={store.getState().appSystem}/>
         <Navigation/>
           <div className="container">
             <Switch>

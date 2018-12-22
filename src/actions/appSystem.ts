@@ -9,8 +9,8 @@ export namespace AppSystemActions {
     ERROR_END = 'ERROR_END',
   }
 
-  export const loadingStart = createAction<PartialPick<IAppSystem, 'loading'>>(Type.LOADING_START);
-  export const lodingEnd = createAction<PartialPick<IAppSystem, "loading">>(Type.LOADING_END);
+  export const loadingStart = createAction<PartialPick<IAppSystem, "loading">>(Type.LOADING_START);
+  export const loadingEnd = createAction<PartialPick<IAppSystem, "loading">>(Type.LOADING_END);
   export const errorStart = createAction<PartialPick<IAppSystem, 'error'>>(Type.ERROR_START);
   export const errorEnd = createAction<PartialPick<IAppSystem, "error">>(Type.ERROR_END);
 }

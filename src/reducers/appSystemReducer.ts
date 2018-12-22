@@ -14,7 +14,7 @@ export const appSystemReducer = handleActions<RootState.AppSystemState, IAppSyst
       if(action.payload) {
         return {
             ...state,
-            loading: true,        
+            ...action.payload        
         }
       }      
       return state
@@ -23,7 +23,7 @@ export const appSystemReducer = handleActions<RootState.AppSystemState, IAppSyst
         if(action.payload) {
           return {
               ...state,
-              loading: false,        
+              ...action.payload 
           }
         }      
         return state
@@ -32,7 +32,7 @@ export const appSystemReducer = handleActions<RootState.AppSystemState, IAppSyst
         if(action.payload) {
           return {
               ...state,
-              error: true,        
+              ...action.payload        
           }
         }      
         return state
@@ -41,7 +41,7 @@ export const appSystemReducer = handleActions<RootState.AppSystemState, IAppSyst
         if(action.payload) {
           return {
               ...state,
-              error: false,        
+              ...action.payload        
           }
         }      
         return state
