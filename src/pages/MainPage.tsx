@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { MainPageContentActions, ArticleActions } from '../actions';
+import { MainPageContentActions, ArticleActions, AppSystemActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
@@ -21,6 +21,8 @@ export namespace MainPage {
     actions: MainPageContentActions;
     articleActions: ArticleActions;
     filter: ArticleFiltes.Filter;
+    systemActions: AppSystemActions;
+    
   }
 }
 
@@ -30,9 +32,10 @@ export namespace MainPage {
     const filter = FILTER_VALUES.find((value) => value === hash) || ArticleFiltes.Filter.SHOW_ALL;
     return { mainPageContent: state.mainpageContent, filter };
   },  
-  (dispatch: Dispatch): Pick<MainPage.IProps, 'actions' | 'articleActions'> => ({
+  (dispatch: Dispatch): Pick<MainPage.IProps, 'actions' | 'articleActions' | 'systemActions'> => ({
     actions: bindActionCreators(omit(MainPageContentActions, 'Type'), dispatch),
-    articleActions: bindActionCreators(omit(ArticleActions, 'Type'), dispatch)
+    articleActions: bindActionCreators(omit(ArticleActions, 'Type'), dispatch),
+    systemActions: bindActionCreators(omit(AppSystemActions, 'Type'), dispatch)
   })
 )
 
@@ -48,11 +51,13 @@ export default class MainPage extends React.Component<MainPage.IProps> {
   }
 
 public fetchMainPageContent = () => {    
-  const { actions } = this.props;
+  const { actions, systemActions } = this.props;
+  systemActions.loadingStart({loading: true})
   return fetch(`${process.env.api_path}/mainpage-content`)
   .then(res => res.json())
   .then(body => {
     actions.fetchMPContentSucesss(groupByType(body))
+    systemActions.loadingEnd({loading: false})
   })
   .catch(err => actions.fetchMPContentFailure({name: err}))
   } 

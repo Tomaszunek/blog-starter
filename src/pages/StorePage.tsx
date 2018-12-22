@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { ProductActions } from '../actions';
+import { ProductActions, AppSystemActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
@@ -18,6 +18,7 @@ export namespace StorePage {
   export interface IProps extends RouteComponentProps<void> {
     products: RootState.ProductsState;
     actions: ProductActions;
+    systemActions: AppSystemActions;
     filter: ArticleFiltes.Filter;
   }
 }
@@ -28,8 +29,9 @@ export namespace StorePage {
     const filter = FILTER_VALUES.find((value) => value === hash) || ArticleFiltes.Filter.SHOW_ALL;
     return { products: state.products, filter };
   },  
-  (dispatch: Dispatch): Pick<StorePage.IProps, 'actions'> => ({
-    actions: bindActionCreators(omit(ProductActions, 'Type'), dispatch)
+  (dispatch: Dispatch): Pick<StorePage.IProps, 'actions' | 'systemActions'> => ({
+    actions: bindActionCreators(omit(ProductActions, 'Type'), dispatch),
+    systemActions: bindActionCreators(omit(AppSystemActions, 'Type'), dispatch),
   })
 )
 
@@ -44,11 +46,13 @@ export default class StorePage extends React.Component<StorePage.IProps> {
     );
   }
   public fetchProductContent = () => {    
-    const { actions } = this.props;
+    const { actions, systemActions } = this.props;
+    systemActions.loadingStart({loading: true})
     return fetch(`${process.env.api_path}/products`)
     .then(res => res.json())
     .then(body => {
       actions.fetchProductsSuccess(body)
+      systemActions.loadingEnd({loading: false})
     })
     .catch(err => console.log(err))
   } 

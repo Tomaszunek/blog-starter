@@ -7,6 +7,7 @@ import { productReducer } from './productReducer';
 import { mainpageReducer } from './mainPageReducer';
 import { abilitiesReducer } from './abilitiesReducer';
 import { projectsReducer } from './projectsReducer';
+import { appSystemReducer } from './appSystemReducer';
 
 export { IRootState, RootState };
 
@@ -20,4 +21,5 @@ export const rootReducer = combineReducers<IRootState>({
     projects: projectsReducer as any,
     abilities: abilitiesReducer as any,
     mainpageContent: mainpageReducer as any,
+    appSystem: appSystemReducer as any
 });

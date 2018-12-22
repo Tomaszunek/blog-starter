@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { ProjectsActions } from '../actions';
+import { ProjectsActions, AppSystemActions } from '../actions';
 import { ArticleFiltes } from '../models';
 import { IRootState, RootState } from '../reducers';
 import { omit } from '../utils';
@@ -19,6 +19,7 @@ export namespace ProjectPage {
     projects: RootState.ProjectsState;
     actions: ProjectsActions;
     filter: ArticleFiltes.Filter;
+    systemActions: AppSystemActions;
   }
 }
 
@@ -28,8 +29,9 @@ export namespace ProjectPage {
     const filter = FILTER_VALUES.find((value) => value === hash) || ArticleFiltes.Filter.SHOW_ALL;
     return { projects: state.projects, filter };
   },  
-  (dispatch: Dispatch): Pick<ProjectPage.IProps, 'actions'> => ({
-    actions: bindActionCreators(omit(ProjectsActions, 'Type'), dispatch)
+  (dispatch: Dispatch): Pick<ProjectPage.IProps, 'actions' | 'systemActions'> => ({
+    actions: bindActionCreators(omit(ProjectsActions, 'Type'), dispatch),
+    systemActions: bindActionCreators(omit(AppSystemActions, 'Type'), dispatch),
   })
 )
 
@@ -44,11 +46,15 @@ export default class ProjectPage extends React.Component<ProjectPage.IProps> {
     );
   }
   public fetchProjectContent = () => {    
-    const { actions } = this.props;
+    const { actions, systemActions } = this.props;
     const url = `${process.env.api_path}/contents/project`;
+    systemActions.loadingStart({loading: true})
     return fetch(url)
     .then(res => res.json())    
-    .then(body => actions.fetchProjectsSucess(body))
+    .then(body => {
+      actions.fetchProjectsSucess(body)
+      systemActions.loadingEnd({loading: false})
+    })
     .catch(err => console.log(err))    
   }  
 }
