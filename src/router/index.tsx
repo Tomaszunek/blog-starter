@@ -25,8 +25,8 @@ export const RouteApp = () => (
   <Provider store={store}>   
     <Router history={history}>
       <div>
-        <LoadingScreen showLoading={false}/>
-        <ErrorScreen/>
+        <LoadingScreen showLoading={store.getState().appSystem.loading}/>
+        <ErrorScreen showError={store.getState().appSystem.error}/>
         <Navigation/>
           <div className="container">
             <Switch>
