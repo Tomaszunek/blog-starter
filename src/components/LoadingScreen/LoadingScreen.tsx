@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { IRootState, RootState } from '../../reducers';
+import './loadingScreen.scss'
 
 
 export namespace LoadingPage {
