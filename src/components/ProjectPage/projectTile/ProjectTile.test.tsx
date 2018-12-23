@@ -6,12 +6,7 @@ import { IArticleModel } from 'src/models';
 
 describe('ProjectPage', () => {
   describe('Component should render right', () => {
-    let app:any;
-    const testMatch:any = {
-      path: '',
-      params: {},
-      url: ''
-    };
+    let app:any;    
     const project:IArticleModel ={
         id: 1,
         type: "ability",
