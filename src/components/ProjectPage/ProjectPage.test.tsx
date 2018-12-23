@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import * as renderer from 'react-test-renderer';
-import StorePageComp from './StorePageComp'
-import { IProductModel } from 'src/models';
+import ProjectPage from './ProjectPage'
+import { IArticleModel } from 'src/models';
 
 describe('ProjectPage', () => {
   describe('Component should render right', () => {
@@ -12,7 +12,7 @@ describe('ProjectPage', () => {
       params: {},
       url: ''
     };
-    const products:Array<IProductModel> = [{
+    const projects:Array<IArticleModel> = [{
         id: 1,
         type: "ability",
         body: "body",
@@ -21,16 +21,16 @@ describe('ProjectPage', () => {
         name: "woda",
         slug: "woda",
         updatedAt: new Date(1545167325 *1000),
-        productType: "type"
+        articleType: "type"
     }]         
     beforeEach(() => {
       app = mount( 
-        <StorePageComp products={products} match={testMatch}/>
+        <ProjectPage projects={projects} match={testMatch}/>
       )
     })
     it('render correctly snapshot component', () => {
       const tree = renderer
-      .create(<StorePageComp products={products} match={testMatch}/>)
+      .create(<ProjectPage projects={projects} match={testMatch}/>)
       .toJSON();
       expect(tree).toMatchSnapshot();
     })    
@@ -42,7 +42,7 @@ describe('ProjectPage', () => {
       expect(app.find('.breadcrumbs').length).toEqual(1)
     })
     it('should have proper props', () => {
-      expect(app.instance().props.products).toEqual(products)
+      expect(app.instance().props.projects).toEqual(projects)
       expect(app.instance().props.match).toEqual(testMatch) 
     })   
   });

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectPage Component should render right render correctly snapshot component 1`] = `
+<a
+  className="projectTile ability"
+  href={undefined}
+>
+  <img
+    alt=""
+    src="/images/projects/images/placeholder/abc.jpg"
+  />
+  <div
+    className="categoryTile"
+  >
+    <span>
+      woda
+    </span>
+  </div>
+  <p>
+    body
+  </p>
+</a>
+`;

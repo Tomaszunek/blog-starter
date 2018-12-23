@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Page Component should render right render correctly snapshot component 1`] = `
+<main>
+  <div
+    className="fullScreenCont"
+  >
+    <div
+      className="sliderPhoto"
+    />
+  </div>
+  <div
+    className="fullScreenCont"
+  >
+    <div
+      className="articleConteiner"
+    >
+      <div
+        className="grid grid-four"
+      />
+      <div
+        className="grid grid-four"
+      />
+    </div>
+  </div>
+</main>
+`;

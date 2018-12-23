@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Burger Menu Component should render right render correctly snapshot component 1`] = `
+<div
+  className="articleSinglePage"
+>
+  <div
+    className="fullScreenCont"
+  >
+    <div
+      className="headerPhoto"
+    >
+      <img
+        alt=""
+        src="/images/placeholders/images/placeholder/abc.jpg"
+      />
+      <div
+        className="headerPhotoInfo"
+      >
+        <p
+          className="name"
+        >
+          woda
+        </p>
+        <p>
+          Tue Dec 18 2018 22:08:45 GMT+0100 (Central European Standard Time)
+        </p>
+      </div>
+    </div>
+  </div>
+  <ul
+    className="breadcrumbs"
+  >
+    <li
+      className="home"
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="current"
+    >
+      <a />
+    </li>
+  </ul>
+  <div
+    className="contentBody"
+  >
+    <div
+      className="body"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "body</p>",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectPage Component should render right render correctly snapshot component 1`] = `
+<main>
+  <div
+    className="fullScreenCont"
+  >
+    <img
+      alt=""
+      className="headerImage"
+      src={undefined}
+    />
+  </div>
+  <div
+    className="searchBar"
+  >
+    <form
+      action=""
+    >
+      <select
+        className="contentType"
+        defaultValue={
+          Array [
+            "article",
+          ]
+        }
+        multiple={true}
+        name="findType"
+        onChange={[Function]}
+      >
+        <option
+          value="article"
+        >
+          article
+        </option>
+        <option
+          value="product"
+        >
+          product
+        </option>
+      </select>
+      <div
+        className="categoryCont"
+      >
+        Categories
+      </div>
+      <button>
+        Find
+        product
+      </button>
+    </form>
+  </div>
+  <ul
+    className="breadcrumbs"
+  >
+    <li
+      className="home"
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="current"
+    >
+      <a />
+    </li>
+  </ul>
+  <div
+    className="articleConteiner"
+  >
+    <div
+      className="grid grid-four"
+    >
+      <div
+        className="articleTile"
+        data-attr={1}
+      >
+        <a
+          href="/product/woda"
+        >
+          <img
+            alt=""
+            src="./images/placeholders/images/placeholder/abc.jpg"
+          />
+          <div
+            className="tileCont"
+          >
+            <div>
+              <span>
+                woda
+              </span>
+              <p>
+                16.99$
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      className="grid grid-four"
+    />
+  </div>
+</main>
+`;

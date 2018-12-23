@@ -1,18 +1,13 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import * as renderer from 'react-test-renderer';
-import StorePageComp from './StorePageComp'
-import { IProductModel } from 'src/models';
+import ProjectTile from './ProjectTile'
+import { IArticleModel } from 'src/models';
 
 describe('ProjectPage', () => {
   describe('Component should render right', () => {
-    let app:any;
-    const testMatch:any = {
-      path: '',
-      params: {},
-      url: ''
-    };
-    const products:Array<IProductModel> = [{
+    let app:any;    
+    const project:IArticleModel ={
         id: 1,
         type: "ability",
         body: "body",
@@ -21,29 +16,28 @@ describe('ProjectPage', () => {
         name: "woda",
         slug: "woda",
         updatedAt: new Date(1545167325 *1000),
-        productType: "type"
-    }]         
+        articleType: "type"
+    }        
     beforeEach(() => {
       app = mount( 
-        <StorePageComp products={products} match={testMatch}/>
+        <ProjectTile article={project}/>
       )
     })
     it('render correctly snapshot component', () => {
       const tree = renderer
-      .create(<StorePageComp products={products} match={testMatch}/>)
+      .create(<ProjectTile article={project}/>)
       .toJSON();
       expect(tree).toMatchSnapshot();
     })    
     it('should contain project containar', () => {      
-      expect(app.find('main').length).toEqual(1)               
+      expect(app.find('.projectTile').length).toEqual(1)               
     })
     it('should contain elements', () => {
-      expect(app.find('.headerImage').length).toEqual(1) 
-      expect(app.find('.breadcrumbs').length).toEqual(1)
+        expect(app.find('img').length).toEqual(1)
+        expect(app.find('.categoryTile').length).toEqual(1)
     })
     it('should have proper props', () => {
-      expect(app.instance().props.products).toEqual(products)
-      expect(app.instance().props.match).toEqual(testMatch) 
+      expect(app.instance().props.article).toEqual(project)
     })   
   });
 }); 
