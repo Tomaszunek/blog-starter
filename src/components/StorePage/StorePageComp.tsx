@@ -15,7 +15,7 @@ export default class StorePageComp extends React.Component<IStorePageCompProps, 
     return (
       <main>
         <FullScreenCont>        
-          <img src={image} alt=""/>          
+          <img className="headerImage" src={image} alt=""/>          
         </FullScreenCont>
         <SearchBarBlog searchContentType={SearchContentType.product} articleType={AricleTypes.motivation} />         
         <BreadcrumbsTemplate match={this.props.match}/>
