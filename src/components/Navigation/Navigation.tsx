@@ -5,7 +5,7 @@ import Links from './navLinks';
 import './navigation.scss';
 import BurgerMenu from './BurgerMenu';
 
-export default class Navigation extends React.Component<IProps, IState> {
+export default class Navigation extends React.Component<any, IState> {
 
   constructor(props: any) {
     super(props);
@@ -45,10 +45,6 @@ export default class Navigation extends React.Component<IProps, IState> {
       </nav>
     );
   }
-}
-
-interface IProps {
-  someVrbl?: any
 }
 interface IState {
   navBar: string
