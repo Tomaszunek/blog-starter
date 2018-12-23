@@ -2,7 +2,6 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import * as renderer from 'react-test-renderer';
 import ProductSinglePageComp from './productSinglePageComp'
-import { BrowserRouter as Router } from 'react-router-dom';
 import { IProductModel } from 'src/models';
 
 describe('Burger Menu', () => {
@@ -13,7 +12,7 @@ describe('Burger Menu', () => {
       params: {},
       url: ''
     };
-    const article:IProductModel = {
+    const product:IProductModel = {
         id: 1,
         type: "ability",
         body: "body",
@@ -26,20 +25,26 @@ describe('Burger Menu', () => {
     }         
     beforeEach(() => {
       app = mount( 
-        <ProductSinglePageComp product={article} match={testMatch}/>
+        <ProductSinglePageComp product={product} match={testMatch}/>
       )
     })
     it('render correctly snapshot component', () => {
       const tree = renderer
-      .create(<ProductSinglePageComp product={article} match={testMatch}/>)
+      .create(<ProductSinglePageComp product={product} match={testMatch}/>)
       .toJSON();
       expect(tree).toMatchSnapshot();
     })    
-    it.skip('should contain nav containar', () => {      
-      expect(app.find('ul').length).toEqual(1)        
+    it('should contain productSinglePage containar', () => {      
+      expect(app.find('.articleSinglePage').length).toEqual(1)               
     })
-    it.skip('should contain elements', () => {
-      // 
-    })    
+    it('should contain elements', () => {
+      expect(app.find('.headerPhoto').length).toEqual(1) 
+      expect(app.find('.headerPhotoInfo').length).toEqual(1) 
+      expect(app.find('.breadcrumbs').length).toEqual(1)
+    })
+    it('should have proper props', () => {
+      expect(app.instance().props.product).toEqual(product)
+      expect(app.instance().props.match).toEqual(testMatch) 
+    })   
   });
 }); 
