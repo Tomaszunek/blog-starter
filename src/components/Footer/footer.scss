@@ -18,7 +18,7 @@ footer {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-gap: 40px;
-            margin-right: 120px;
+            margin-right: 190px;
             width: 45%;
     
             a {
@@ -166,6 +166,13 @@ footer {
 
             .links {
                 grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 27px;
+                margin-right: 167px;
+                width: 33%;
+
+                a {
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -177,10 +184,15 @@ footer {
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 80%;    
+            width: 90%;  
 
             .links {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 15px 26px;
+
+                a {
+                    font-size: 23px;
+                }
             }
             form {
                 margin-top: 30px;                              
@@ -199,11 +211,14 @@ footer {
 
             .links {
                 grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 15px 36px;
+                a {
+                    font-size: 20px;
+                }
             }
             form {
-                margin-top: 30px;                              
+                margin-top: 30px;                  
             }
         }
     }
-
 }

@@ -11,15 +11,15 @@
         min-height: 100%;
     } 
     @media only screen and (min-width: $sm) and (max-width: $lg) {
-        width: 100vw;
-        height: 100vh;
+        width: 96vw;
+        height: 51vh;
     }
     @media only screen and (min-width: $xs) and (max-width: $sm) {
-        width: 103vw;
-        height: 100vh;
+        width: 97.3vw;
+        height: 50vh;
     }
     @media only screen and (max-width: $xs) {
-        width: 108vw;
-        height: 100vh;
+        width: 96.5vw;
+        height: 35vh;
     }   
 }
