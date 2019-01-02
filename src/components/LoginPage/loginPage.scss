@@ -1,0 +1,80 @@
+@import 'src/styles/variables.scss';
+
+.loginPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    width: 70%;
+
+    @media only screen and (min-width: $sm) and (max-width: $lg) {
+        width: 75%;
+    }
+    @media only screen and (min-width: $xs) and (max-width: $sm) {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+    @media only screen and (max-width: $xs) {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 15px;
+        height: 30px;
+        padding-left: 15px;
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    span {
+        font-size: 20px;
+        line-height: 2em;
+    }
+
+    .registerForm {
+        width: 80%;        
+    }
+
+    .loginForm {    
+        width: 80%;
+        border-left: 1px solid $font-c;
+        padding-left: 20%;        
+
+        form {
+            margin-top: 90px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        border: 0;
+        border-radius: 6px;
+        color: $font-c;
+        margin-top: 10px;
+        font-size: 14px;
+
+        &.sign-in {
+            background: #007bff;
+        }
+
+        &.sign-up {
+            background: #1e7e34;
+        }
+    }
+    a {
+        margin-left: 20px;
+        color: #007bff;
+    }
+
+}
