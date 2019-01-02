@@ -7,3 +7,5 @@ export { default as ProjectPage } from './ProjectPage'
 export { default as AboutAuthorPage } from './AboutAuthorPage'
 export { default as ProductSinglePage } from './ProductSinglePage'
 export { default as ArticleSinglePage } from './ArticleSinglePage'
+export { default as LoginPage } from './LoginPage'
+
