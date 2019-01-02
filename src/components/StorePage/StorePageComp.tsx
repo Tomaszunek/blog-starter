@@ -2,8 +2,6 @@ import * as React from 'react';
 import './storePage.scss'
 import FullScreenCont from '../template/fullScreenCont/fullSreenCont';
 import { IProductModel } from 'src/models';
-
-import image from '../../logo.svg'
 import BreadcrumbsTemplate from '../template/breadcrumbs/breadcrumbs';
 import { match } from 'react-router';
 import ArticleContainer from '../ArticlePage/articleContainer/articleContainer';
@@ -15,7 +13,7 @@ export default class StorePageComp extends React.Component<IStorePageCompProps, 
     return (
       <main>
         <FullScreenCont>        
-          <img className="headerImage" src={image} alt=""/>          
+          <img className="headerImage" src="" alt=""/>          
         </FullScreenCont>
         <SearchBarBlog searchContentType={SearchContentType.product} articleType={AricleTypes.motivation} />         
         <BreadcrumbsTemplate match={this.props.match}/>
