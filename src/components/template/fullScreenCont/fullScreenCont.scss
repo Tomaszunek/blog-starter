@@ -5,7 +5,27 @@
     margin: 0px -100px 0px -100px;
     
     .headerImage {
-        width: 100vw;
+        width: 99vw;
         height: 40vh;
     }
+
+    @media only screen and (min-width: $sm) and (max-width: $lg) {
+        margin: 0px -80px 0px -80px;
+        .headerImage {
+            width: 97.8vw;
+        }
+    }
+    @media only screen and (min-width: $xs) and (max-width: $sm) {
+        margin: 0px -60px 0px -60px;
+        .headerImage {
+            width: 97vw;
+        }
+    }
+    @media only screen and (max-width: $xs) {
+        margin: 0px -40px 0px -40px;
+
+        .headerImage {
+            width: 96vw;
+        }
+    }   
 }

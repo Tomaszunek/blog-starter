@@ -7,16 +7,16 @@
     display: grid;
     grid-gap: 10px;
     margin: 20px 10px;
+    width: 100%;
 
     @media only screen and (min-width: $sm) and (max-width: $lg) {
       width: 97%;
     }
     @media only screen and (min-width: $xs) and (max-width: $sm) {
-      width: 91%;
+      margin: 10px 0;
     }
     @media only screen and (max-width: $xs) {
-      width: 80%;
-      margin: 15px 0px 11px 60px;
+      margin: 12px 0px 11px 0px;
     } 
 
     img {

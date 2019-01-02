@@ -1,0 +1,40 @@
+@import 'src/styles/variables.scss';
+
+.articleSinglePage {
+    .headerPhoto {
+        height: 70vh;
+        .headerPhotoInfo.name {
+            float: left;
+            margin: 55vh 0px;
+            padding: 16px 65px;
+            background-color: rgba(35, 35, 35, 0.5);
+            border-radius: 0 30px 30px 0;
+        }        
+    }
+
+
+    @media only screen and (min-width: $sm) and (max-width: $lg) {
+        .headerPhoto {
+            height: 70vh;
+            .headerPhotoInfo.name {
+                margin: 56vh 0px;
+            }   
+        }
+    }
+    @media only screen and (min-width: $xs) and (max-width: $sm) {
+        .headerPhoto {
+            height: 70vh;
+            .headerPhotoInfo.name {
+                margin: 56vh 0px;
+            }   
+        }
+    }
+    @media only screen and (max-width: $xs) {
+        .headerPhoto {
+            height: 44vh;
+            .headerPhotoInfo.name {
+                margin: 34vh 0px;
+            }                
+        }
+    } 
+}

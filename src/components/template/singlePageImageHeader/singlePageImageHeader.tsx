@@ -15,8 +15,8 @@ export default class SinglePageImageHeader extends React.Component<ISinglePageIm
       <div className="headerPhoto">
         <img src={image} alt=""/>
         <div className="headerPhotoInfo">
-            <p className="name">{name}</p>
             <CategoryTags categories={categories} articleType={type}/>
+            <p className="name">{name}</p>
             <p>{createdAt && createdAt.toString()}</p>
         </div>
       </div>

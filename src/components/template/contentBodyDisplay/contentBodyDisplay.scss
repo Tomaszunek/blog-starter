@@ -1,3 +1,4 @@
+@import 'src/styles/variables.scss';
 .contentBody {
     .body {
         p {
@@ -7,6 +8,7 @@
             text-align: justify;
             padding-bottom: 50px;
             border-bottom: 1px solid;
+            color: $font-c;
 
             &:first-letter {
                 font-size: 3em;
@@ -20,10 +22,42 @@
                 border-bottom: 0px solid;
             }
         }
+        @media only screen and (min-width: $sm) and (max-width: $lg) {
+            p {
+                font-size: 1em;
+                line-height: 1.5em;
+                margin: -0.375em 12px;
+
+                &:first-letter {
+                    font-size: 2.5em;
+                }
+            }
+        }
+        @media only screen and (min-width: $xs) and (max-width: $sm) {
+            p {
+                font-size: 1em;
+                line-height: 1.5em;
+                margin: -0.375em 12px;
+                &:first-letter {
+                    font-size: 2.7em;
+                }
+            }
+        }
+        @media only screen and (max-width: $xs) {
+            p {
+                font-size: 1em;
+                line-height: 1.5em;
+                margin: -0.375em 12px;
+                &:first-letter {
+                    font-size: 2em;
+                }
+            }
+        } 
 
         img {
             width: 150vh;
             margin-left: 100px;
         }
     }
+
 }
