@@ -9,18 +9,6 @@
     margin-bottom: 200px;
     width: 70%;
 
-    @media only screen and (min-width: $sm) and (max-width: $lg) {
-        width: 75%;
-    }
-    @media only screen and (min-width: $xs) and (max-width: $sm) {
-        grid-template-columns: 1fr;
-        width: 80%;
-    }
-    @media only screen and (max-width: $xs) {
-        grid-template-columns: 1fr;
-        width: 90%;
-    }
-
     input {
         width: 100%;
         border-radius: 15px;
@@ -75,6 +63,63 @@
     a {
         margin-left: 20px;
         color: #007bff;
+    }
+
+    @media only screen and (min-width: $sm) and (max-width: $lg) {
+        width: 95%;
+
+        .registerForm {
+            width: 85%;  
+        }
+        .loginForm {    
+            width: 85%;            
+        }
+    }
+    @media only screen and (min-width: $xs) and (max-width: $sm) {
+        grid-template-columns: 1fr;
+        width: 80%;
+
+        .registerForm {
+            width: 100%;
+        }
+        .loginForm {    
+            width: 100%;
+            border-top: 1px solid $font-c;
+            border-left: 0px;
+            margin-top: 50px;
+            padding: 0%;        
+    
+            form {
+                margin-top: 90px;
+            }
+    
+            input {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $xs) {
+        grid-template-columns: 1fr;
+        width: 90%;
+        .registerForm {
+            width: 100%;
+        }
+        .loginForm {    
+            width: 100%;
+            border-top: 1px solid $font-c;
+            border-left: 0px;
+            margin-top: 50px;
+            padding: 0%;        
+    
+            form {
+                margin-top: 90px;
+            }
+    
+            input {
+                margin-bottom: 10px;
+            }
+        }
     }
 
 }
