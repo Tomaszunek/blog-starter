@@ -8,7 +8,8 @@ import { configureStore } from '../store';
 
 import { MainPage, ArticlePage, ProjectPage, 
   AbilityPage, StorePage, ErrorPage, 
-  AboutAuthorPage, ArticleSinglePage, ProductSinglePage } from '../pages';
+  AboutAuthorPage, ArticleSinglePage, ProductSinglePage,
+  LoginPage } from '../pages';
 
 import Navigation from '../components/Navigation/Navigation';
 import Footer from '../components/Footer/Footer';
@@ -35,7 +36,7 @@ export const RouteApp = () => (
               <Route path="/abilities" component={AbilityPage} />
               <Route path="/products" component={StorePage} />
               <Route path="/product/:slug" component={ProductSinglePage} /> 
-              <Route path="/login" component={StorePage} />
+              <Route path="/login" component={LoginPage} />
               <Route path="/about" component={AboutAuthorPage} />
               <Route component={ErrorPage}/>
             </Switch>
